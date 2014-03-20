@@ -66,7 +66,7 @@
   				$link = wp_get_attachment_url($image->ID);
   			    $full = "'" . $link . "'"; 
 				echo '<a class="lightbox_trigger" href="' . $link . '">';
-				echo '<img class="lazy" src="http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader.gif" data-original="' . $link . '" id="" title="" alt=""/>';
+				echo '<img class="lazy" src="loader.gif" data-original="' . $link . '" id="" title="" alt=""/>';
 				echo '</a>';
    			}
 		}

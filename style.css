@@ -391,7 +391,7 @@ html,body{height:100%;}
 	position: fixed;
 	padding-top: auto;
 	bottom: 15px;
-	background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') center center no-repeat;
+	background: url('ArrowLeft.png') center center no-repeat;
 	background-color: white;
 	display: none;
 	position: fixed;
@@ -407,7 +407,7 @@ html,body{height:100%;}
 	right: 0;
 	position: fixed;
 	bottom: 15px;
-	background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') center center no-repeat;
+	background: url('ArrowRight.png') center center no-repeat;
 	background-color: white;
 	display: none;
 	position: fixed;
@@ -494,13 +494,13 @@ html,body{height:100%;}
 /* iPad Landscape */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) { 
 	.rightArrow{
-		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') bottom center no-repeat;
+		background: url('ArrowRight.png') bottom center no-repeat;
 		margin-bottom: 15px;
 		z-index: 4;
 	}
 
 	.leftArrow{
-		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') bottom center no-repeat;
+		background: url('ArrowLeft.png') bottom center no-repeat;
 		margin-bottom: 15px;
 		z-index: 4;
 	}
@@ -520,13 +520,13 @@ html,body{height:100%;}
 /* iPad Portrait */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
 	.rightArrow{
-		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') bottom center no-repeat;
+		background: url('ArrowRight.png') bottom center no-repeat;
 		margin-bottom: 15px;
 		z-index: 4;
 	}
 
 	.leftArrow{
-		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') bottom center no-repeat;
+		background: url('ArrowLeft.png') bottom center no-repeat;
 		margin-bottom: 15px;
 		z-index: 4;
 	}
@@ -545,14 +545,14 @@ html,body{height:100%;}
 /*Retina iPad */
 @media only screen and (min-device-width: 1536px) and (max-device-width: 2048px) and (orientation : landscape)and (-webkit-min-device-pixel-ratio: 2) {
      .rightArrow{
-		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') bottom center no-repeat;
+		background: url('ArrowRight.png') bottom center no-repeat;
 		margin-bottom: 15px;
 		z-index: 4;
 		margin-right: 5px;
 	}
 
 	.leftArrow{
-		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') bottom center no-repeat;
+		background: url('ArrowLeft.png') bottom center no-repeat;
 		margin-bottom: 15px;
 		z-index: 4;
 		margin-left: 5px;
@@ -573,7 +573,7 @@ html,body{height:100%;}
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) {
 	.leftArrow{
 		width: 20px;
-		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') bottom center no-repeat;
+		background: url('ArrowLeft.png') bottom center no-repeat;
 		margin-bottom: 5px;
 		margin-left: 5px;
 		z-index: 4;
@@ -581,7 +581,7 @@ html,body{height:100%;}
 
 	.rightArrow{
 		width: 20px;
-		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') bottom center no-repeat;
+		background: url('ArrowRight.png') bottom center no-repeat;
 		margin-bottom: 5px;
 		margin-right: 5px;
 		z-index: 4;
@@ -629,7 +629,7 @@ html,body{height:100%;}
 	.leftArrow{
 		width: 50px;
 		height:50px;
-		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') bottom center no-repeat;
+		background: url('ArrowLeft.png') bottom center no-repeat;
 		margin-bottom: 0px;
 		margin-left: 0px;
 		z-index: 4;
@@ -638,7 +638,7 @@ html,body{height:100%;}
 	.rightArrow{
 		width: 50px;
 		height:50px;
-		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') bottom center no-repeat;
+		background: url('ArrowRight.png') bottom center no-repeat;
 		margin-bottom: 0px;
 		margin-right: 0px;
 		z-index: 4;
@@ -713,14 +713,14 @@ html,body{height:100%;}
 	}
 .leftArrow{
 	width: 15px;
-	background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') bottom center no-repeat;
+	background: url('ArrowLeft.png') bottom center no-repeat;
 	z-index:10000;
 	height:20px;
 }
 
 .rightArrow{
 	width: 15px;
-	background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') bottom center no-repeat;
+	background: url('ArrowRight.png') bottom center no-repeat;
 	z-index:10000;
 	height:20px;
 	}

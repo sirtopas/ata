@@ -1,0 +1,1 @@
+xcopy C:\wamp\www\wordpress\wp-content\themes\ata C:\wamp\www\wordpress\wp-content\themes\ata\binary_ata
