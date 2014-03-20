@@ -173,7 +173,12 @@ footer{
 .newsContainer{
 	margin-bottom: 100px;
 }
-
+.homeContainer{
+	margin-top: 60px;
+}
+.indexContainer{
+	margin-top: 60px;
+}
 .contactItem{
 	width: 300px;
 	margin-left: auto;

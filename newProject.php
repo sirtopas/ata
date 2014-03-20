@@ -4,13 +4,24 @@
 	Template Name: newProjects
 */
 ?>
+<!-- Load home -->
 
+<div class="projectContent" id="home" style="width:100%" >
+<div class="homeContainer">
+<center>No home content yet.</center>
+
+
+</div>
+</div>
+<?php 
+	echo '<div class="rightArrow" id="Rhome" onclick="loadProjects()"></div>';
+?>
 <!-- Load all projects -->
 <?php
 	$argys = array('category' => '4', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order ID');
 	$posts = get_posts( $argys );
 	$currentIndex = 0;
-
+	$firstPost = true;
 	foreach($posts as $post) :
 		$postName = $post -> ID;
 		$previous = $posts[$currentIndex - 1];
@@ -33,9 +44,15 @@
 		$content = preg_replace("#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#", '', $content); 
 		
 		$frames = explode("-slide-", trim($content));
-
-		echo '<div class="leftArrow" id="L'. $postName . '" onclick="loadProject(' . $prevPost . ',' . $thisPost . ')"></div>';
-
+		if($firstPost == true)
+		{
+			echo '<div class="leftArrow" id="L'. $postName . '" onclick="loadProject(home,' . $thisPost . ')"></div>';
+			$firstPost = false;
+		}
+		else
+		{
+			echo '<div class="leftArrow" id="L'. $postName . '" onclick="loadProject(' . $prevPost . ',' . $thisPost . ')"></div>';
+		}
 		if($nextPost != "''") 
 		{
 			echo '<div class="rightArrow" id="R'. $postName . '" onclick="loadProject(' . $nextPost . ',' . $thisPost . ')"></div>';
@@ -146,13 +163,26 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 <?php endforeach; wp_reset_postdata(); ?>
 </div>
 </div>
+<?php 
+	echo '<div class="rightArrow" id="Rnews" onclick="loadIndex()"></div>';
+?>
 
+<!-- Load index -->
+<?php 
+	echo '<div class="leftArrow" id="Lindex" onclick="loadNews()"></div>';
+?>
+<div class="projectContent" id="index" style="width:100%" >
+<div class="indexContainer">
+<center>No index content yet.</center>
+
+</div>
+</div>
 <div class = "testMenu">
 	<ul class="nav">
-		<li><a id="homeLink" class="inactive" href="javascript:loadProjects();">Home</a></li>
-		<li><a id="projectsLink" class="active" href="javascript:loadProjects();">Projects</a></li>
+		<li><a id="homeLink" class="active" href="javascript:loadHome();">Home</a></li>
+		<li><a id="projectsLink" class="inactive" href="javascript:loadProjects();">Projects</a></li>
 		<li><a id="contactLink" class="inactive" href="javascript:loadContact();">Office</a></li>
-		<li><a id="indexLink" class="inactive" href="javascript:loadProjects();">Index</a></li>
+		<li><a id="indexLink" class="inactive" href="javascript:loadIndex();">Index</a></li>
 	</ul>
 </div>
 <?php get_footer(); ?>
