@@ -1,3 +1,4 @@
+var currentPage;
 $(window).load(function () {
     $(function () {
         $('img.rollover').hover(function () {
@@ -44,6 +45,7 @@ $(document).keydown(function (e) {
 
 
 $(document).ready(function () {
+	$currentPage = 'home';
 	loadProject('home','0');
 FastClick.attach(document.body);
 
@@ -52,7 +54,7 @@ FastClick.attach(document.body);
 
 
 function loadProject(projectId, currId) {
-
+	$currentPage = projectId;
     jQuery('html,body').animate({
         scrollTop: 0
     }, 0);
@@ -163,8 +165,7 @@ var contactImages = $(".contactItem img");
 
 
 function loadNews() {
-    var $visibleProject = "";
-    $visibleProject = $(".rightArrow:visible").first().attr("id").substring(1);
+
 	var newsImages = $(".newsItem img");
     newsImages.each(function (idx, img) {
         $(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader_300.gif");
@@ -177,7 +178,7 @@ function loadNews() {
 		$(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader_300.gif");
     });
 	
-    loadProject('news', $visibleProject);
+    loadProject('news', $currentPage);
 	
     /*$("img.lazy").lazyload({
         effect: "fadeIn"
