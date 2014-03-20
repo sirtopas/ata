@@ -1,4 +1,5 @@
 var currentPage;
+var firstProject;
 $(window).load(function () {
     $(function () {
         $('img.rollover').hover(function () {
@@ -47,6 +48,7 @@ $(document).keydown(function (e) {
 $(document).ready(function () {
 	$currentPage = 'home';
 	loadProject('home','0');
+	$firstProject = $('.projectContent:first').attr('id');
 FastClick.attach(document.body);
 
 });
@@ -203,7 +205,7 @@ function loadNews() {
         $('#lightbox').fadeIn(500);
 
     });
-    setLinkStatuses('news');
+    setLinkStatuses('contact');
 }
 
 function loadIndex() {
@@ -289,15 +291,7 @@ jQuery(document).ready(function ($) {
 
 
 function loadProjects() {
-    var $visibleProject = $visibleProject = $(".leftArrow:visible").first().attr("id");
-    var $firstProject = $('.projectContent:first').attr('id');
-    if ($visibleProject == "Lcontact") {
-        loadProject($firstProject, 'contact');
-    }
-    if ($visibleProject == "Lnews") {
-        loadProject($firstProject, 'news');
-    }
-
+           loadProject($firstProject, $currentPage);
 }
 
 $(function () {

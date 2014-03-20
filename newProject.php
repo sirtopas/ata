@@ -46,7 +46,7 @@
 		$frames = explode("-slide-", trim($content));
 		if($firstPost == true)
 		{
-			echo '<div class="leftArrow" id="L'. $postName . '" onclick="loadProject(home,' . $thisPost . ')"></div>';
+			echo '<div class="leftArrow" id="L'. $postName . '" onclick="loadProject(' . "'home'" . ',' . $thisPost . ')"></div>';
 			$firstPost = false;
 		}
 		else
