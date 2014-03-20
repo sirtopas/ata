@@ -209,22 +209,13 @@ function loadNews() {
 }
 
 function loadIndex() {
-    var $visibleProject = "";
-    $visibleProject = $(".rightArrow:visible").first().attr("id").substring(1);
-	
-    loadProject('index', $visibleProject);
-	
-    setLinkStatuses('index');
+    loadProject('index', $currentPage);
+	setLinkStatuses('index');
 }
 
 function loadHome() {
-    var $visibleProject = "";
-    $visibleProject = $(".rightArrow:visible").first().attr("id").substring(1);
-	
-    loadProject('home', $visibleProject);
-	
-    setLinkStatuses('home');
-	$("#logo_header").hide();
+    loadProject('home', $currentPage);
+	setLinkStatuses('home');
 }
 
 
@@ -315,8 +306,14 @@ $(function () {
 });
 
 function setLinkStatuses(currentPage) {
-	$("#logo_header").show();
-	
+	if(currentPage == 'home')
+	{
+		$("#logo_header").hide();
+	}
+	else
+	{
+		$("#logo_header").show();
+	}
     $('#homeLink').removeClass('active');
     $('#contactLink').removeClass('active');
 	$('#projectsLink').removeClass('active');

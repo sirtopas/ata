@@ -34,5 +34,5 @@ WebFontConfig = { fontdeck: { id: '41878' } };
 </head>
   <body>
     <div class = "topMenu">
-            <div id="logo_header">Amin Taha Architects</div>
+            <div id="logo_header"><img src="../wp-content/themes/ata/logo_header.jpg"></div>
     </div>

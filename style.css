@@ -7,6 +7,17 @@ Author URI: http://firststrikecomputing.co.uk/
 Version: 2.1
 Tags: architecture
 */
+@font-face {
+    font-family: 'texgyreherosregular';
+    src: url('texgyreheros-regular-webfont.eot');
+    src: url('texgyreheros-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('texgyreheros-regular-webfont.woff') format('woff'),
+         url('texgyreheros-regular-webfont.ttf') format('truetype'),
+         url('texgyreheros-regular-webfont.svg#texgyreherosregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 body{
 	background-color: white;
@@ -16,7 +27,7 @@ body{
     margin: 0;
     padding: 0;
     margin-bottom: 50px;
-	font-family:"Apercu Medium", Calibri, sans-serif; 
+	font-family:"texgyreherosregular","Apercu Medium", Calibri, sans-serif; 
 }
 
 footer{
@@ -62,7 +73,7 @@ footer{
 .nav{
 	text-align: center;
 	color: black;
-	font-weight: 300;
+	
 	padding-bottom: 5px;
 }
 
@@ -89,8 +100,8 @@ footer{
 		
 	}
 	.testMenu ul{
-		font-size: 20px;
-		font-weight: normal;
+		font-size:1.25em;
+		
 		color: black;
 		list-style:none;
 		margin:0;
