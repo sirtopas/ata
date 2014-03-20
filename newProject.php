@@ -149,8 +149,10 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 
 <div class = "testMenu">
 	<ul class="nav">
+		<li><a id="homeLink" class="inactive" href="javascript:loadProjects();">Home</a></li>
 		<li><a id="projectsLink" class="active" href="javascript:loadProjects();">Projects</a></li>
 		<li><a id="contactLink" class="inactive" href="javascript:loadContact();">Office</a></li>
+		<li><a id="indexLink" class="inactive" href="javascript:loadProjects();">Index</a></li>
 	</ul>
 </div>
 <?php get_footer(); ?>
