@@ -150,7 +150,10 @@ footer{
 .btn{
 	text-align: center;
 }
-
+#logo_header
+{
+display: none;
+}
 .newsItem{
 	margin-bottom: 10px;
 	width: 300px;
@@ -174,7 +177,7 @@ footer{
 	margin-bottom: 100px;
 }
 .homeContainer{
-	margin-top: 60px;
+	margin-top: 300px;
 }
 .indexContainer{
 	margin-top: 60px;

@@ -50,7 +50,7 @@ $(document).ready(function () {
 	loadProject('home','0');
 	$firstProject = $('.projectContent:first').attr('id');
 FastClick.attach(document.body);
-
+$("#logo_header").hide();
 });
 
 
@@ -77,7 +77,7 @@ function loadProject(projectId, currId) {
 		
 		listItems.each(function (idx, img) {
 			var src = $(img).attr("src");
-			$(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader.gif");
+			$(img).attr("src", "../wp-content/themes/ata/loader.gif");
 		});
 		
 		
@@ -132,7 +132,7 @@ var contactImages = $(".contactItem img");
 	$(img).show();
 	$(img).addClass("lazy");
 	$(img).width(300).height(300);
-        $(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader_300.gif");
+        $(img).attr("src", "../wp-content/themes/ata/loader_300.gif");
     });
     var $visibleProject = "";
     try {
@@ -170,14 +170,14 @@ function loadNews() {
 
 	var newsImages = $(".newsItem img");
     newsImages.each(function (idx, img) {
-        $(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader_300.gif");
+        $(img).attr("src", "../wp-content/themes/ata/loader_300.gif");
 		$(img).removeClass();
 		$(img).addClass('lazy');
     });
 	var contactImages = $(".contactItem img");
     contactImages.each(function (idx, img) {
         $(img).attr("style", "");
-		$(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader_300.gif");
+		$(img).attr("src", "../wp-content/themes/ata/loader_300.gif");
     });
 	
     loadProject('news', $currentPage);
@@ -224,6 +224,7 @@ function loadHome() {
     loadProject('home', $visibleProject);
 	
     setLinkStatuses('home');
+	$("#logo_header").hide();
 }
 
 
@@ -251,14 +252,14 @@ jQuery(document).ready(function ($) {
     contactImages.each(function (idx, img) {
         var src = $(img).attr("src");
         $(img).attr("data-original", src);
-        $(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader_300.gif");
+        $(img).attr("src", "../wp-content/themes/ata/loader_300.gif");
         $(img).addClass('lazy');
     });
 	var newsImages = $(".newsItem img");
     newsImages.each(function (idx, img) {
         var src = $(img).attr("src");
         $(img).attr("data-original", src);
-        $(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader_300.gif");
+        $(img).attr("src", "../wp-content/themes/ata/loader_300.gif");
         $(img).addClass('lazy');
     });
     $('#lightbox').live('click', function () {
@@ -314,6 +315,8 @@ $(function () {
 });
 
 function setLinkStatuses(currentPage) {
+	$("#logo_header").show();
+	
     $('#homeLink').removeClass('active');
     $('#contactLink').removeClass('active');
 	$('#projectsLink').removeClass('active');

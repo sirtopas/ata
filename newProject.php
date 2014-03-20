@@ -8,7 +8,7 @@
 
 <div class="projectContent" id="home" style="width:100%" >
 <div class="homeContainer">
-<center>No home content yet.</center>
+<center><img src="../wp-content/themes/ata/LOGO.jpg"></center>
 
 
 </div>
