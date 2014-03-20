@@ -1,0 +1,79 @@
+General
+
+Project Text
+
+This is a fairly important one. Currently I can't see any way to add text to a project. I really want to avoid rendering text in jpegs, as text just looks so much crisper (and is of course a lot simpler to edit) as text, and this will please my typographic enthusiasm.
+	-- Working
+		-- Decide on end slide tag
+		-- Work on some styling / colours
+
+
+Desktop
+
+Menu text needs aligning. I appreciate that the project/office menu is offset to accommodate the underline � that's fine � but the 'Amin Taha Architects' text is also offset, but never underlined, so it's kinda floating. Also, can we make menu text larger on the desktop site? You had it larger on a previous draft and it looked good, so can we see that again?
+	-- Can't see that the text is that far out at all? Looks fairly centered? Can't even see much difference between the title and menu text?
+	-- Made Menu text larger
+	-- font-family switched to 'Apercu' rather than 'Apercu-Medium' at least for now. Thoughts?
+
+I notice that each project image is scaled so the entire image is viewable. As a result, portrait images can end up rather small. Can we instead stick to a fixed margin, to which both landscape and portrait images snap, to achieve a consistent image width? Think this will look a lot cleaner, as the varying sizes make it a little chaotic at the moment. Clicking an image should then take you to the lightbox, scaled to fit screen, as it does currently.
+	-- Nicely done.
+		-- Need to sort on mobile...
+
+Loading top image on projects sometimes does not show - requires user to scroll down to image
+
+Office page - no placeholder for images
+			-- Text moves when image appears
+
+
+Mobiles
+
+Navigation arrows are not aligned with rest of menu area. Can they move to the bottom?
+	-- Have been moved. 
+        -- More work on mobiles to tidy up.
+		
+- when you switch to landscape without reloading it fucks all the images up so the width is huge but height isn't 
+--Fixed for all I think
+
+- you can't see the underline on the bottom menu
+-- fixed iphone 5
+
+- the pics on the office pages are slightly squashed width wise, not loads but you can sort of tell the scaling is wrong
+--Fixed
+
+- I can see at least one empty text box, could be something I didn't check for in the tag removal code I added
+-- Really couldn't work out what was doing this - seems to be a weird non-whitespace character but it shows as whitespace. no clue. it only displays boxes with content longer than 3. Bit of a workaround but fine for now.
+
+-Also in full screen image view mode, some of the images overflow height wise
+--can only find one image - third image on the first page - cant find any fix for it at al. only happens when you rotate from portrait to landscape without reloading.
+
+-also I think the bottom of the page is getting slight cut off, is that iphone specific? Should just be as easy as adding a bottom margin to the content box the same height as the menu box
+-- fixed this on iphone 5 portrait/landscape - added a div called projectFooter, as adding extra margins etc was causing glitches at the top of the page. projectFooter only shows on project pages and only visible to iphone 5 css 
+
+
+
+
+Completed
+
+Swipe appears to work on 'Office' but not between projects.
+ 	-- Fixed
+
+Lose the horizontal lines between the menu and page content.
+	-- Done.
+
+Links aren't working yet. They definitely look better in with black underline.
+	-- All links seem to be working?
+	-- On mobile this was an issue - Safari makes you double press or longpress to activate a link which has :hover behaviour. Used a plug-in called fastclick which makes presses much more responsive.
+
+Margins between project imagery and the screen edge could be tighter. In the photoshop mockups they were 20px left, 20px right, 20px between project images.
+	-- Done	
+
+*New*
+On the Office pages, there seems to be no 'place holder' effect for the images before they load. So the text jumps around the page as the images load.
+-- Fixed, but at the moment there is no 'fade in' when the lazyloader loads images on the contact and news page due to this.
+
+Show magnifier instead of hand for cursor over images
+-- Thoughts on this JB? What you reckon? 
+
+Swipe left crom 'News' goes back to random project
+	-- Fixed	
+

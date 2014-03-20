@@ -1,0 +1,185 @@
+/*
+Theme Name: ATA
+Theme URI: http://wordpress.org/
+Description: Amin Taha
+Author: James Brett
+Author URI: http://firststrikecomputing.co.uk
+Version: 1.0
+Tags: none
+*/
+/*@import url('bootstrap/css/bootstrap.css');
+@import url('bootstrap/css/bootstrap-responsive.css');*/
+body{
+	background-color: white;
+/*	font-family: helvetica;*/
+	width: 100%;
+	height: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+footer{
+	background-color: white;
+	/*border: 1px solid black;*/
+}
+
+.title{
+	text-align: center;
+	color: white;
+	position: absolute;
+	top: 10px;
+	text-transform: capitalize;
+	font-size: 20px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.homeImage{
+	/*background: url("images/home.jpg") no-repeat center center fixed;*/
+/*	webkit-background-size: cover;
+	-moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+    min-height: 100%;
+    min-width: 1024px;
+  	width: 100%;	
+  	height: auto;
+  	position: relative;
+}
+
+.container{
+	/*border: 1px solid black;*/
+}
+
+.navbar{
+	/*border: 1px solid black;*/
+	width: 100%;
+}
+
+.nav{
+	text-align: center;
+	color: black;
+	font-weight: 300;
+	/*text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black; */*/
+}
+	.nav a:link, a:visited, a:hover, a:active{
+		color:	black;
+		text-decoration: none;
+	}
+
+.testMenu{
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+	height: 50px;
+	/*border: 1px solid black;*/
+	/*background-color: rgba(0,255,30,0.5);*/
+	background-color: white;
+}
+	.testMenu li, a{
+		padding-right: 50px;
+	}
+
+.btn{
+	text-align: center;
+}
+/*
+.et-background-image {
+ 	-webkit-box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.5);
+  	-moz-box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.5); 
+  	box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.5);
+  	height: 100%; 
+}*/
+
+.hero-unit{
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
+	padding-bottom: 50px;
+	font-family: helvetica;
+}
+	.hero-unit a{
+		text-decoration: none;
+		color: black;
+	}
+
+.projects{
+
+}
+
+.contact{
+
+}
+
+.page{
+	height: 1080px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+/*    -webkit-box-shadow: inset 0 0 3px black; 
+    -webkit-border-radius: 5px;*/
+    border-radius: 5px;
+    visibility: hidden;
+    background: lightgray; 
+/*	background: rgba(0,0,0,0.0); 
+*/
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: gray; 
+    -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.5); 
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+
+::=webkit-scrollbar-corner{
+	height: 50px;
+}
+
+/* Mobile Style Sheet */
+@media handheld, Screen and (max-width: 1000px) {
+
+.hero-unit{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
+	padding-bottom: 50px;
+        background: pink;
+        color: black;
+}
+	.hero-unit a{
+		text-decoration: none;
+		color: black;
+	}
+
+.testMenu{
+		border: 1px solid black;
+	background-color: rgba(0,255,30,0.5);
+}
+
+img{
+/*	max-width: 150px;	*/
+width:100%;
+}
+
+.homeImage{
+width:100%;
+    min-width: 100%;
+}
+}

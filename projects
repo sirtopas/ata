@@ -1,0 +1,15 @@
+<?php get_header(); ?>
+<?php
+/*
+Template Name: projects
+*/
+?>
+<div class="hero-unit">
+<img src="/images/Ada-Street.jpg" style="width:100%" />
+Ada Street
+<img src="/images/Golden-Lane.jpg" style="width:100%" />
+Golden Lane
+<img src="/images/1.jpg" style="width:100%" />
+Westborne Grove
+</div>
+<?php get_footer(); ?> 

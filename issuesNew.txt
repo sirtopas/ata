@@ -1,0 +1,12 @@
+Changes
+
+1) Images are now to be shown in the same width
+2) Top border on iPad Mini is too small - see screenshot
+3) Move project text slides to the bottom rather than the top
+	-> Fixed. 
+4) Lose the background on the text slides
+	-> Removed background but it looks kinda... empty. 
+
+Bugs
+
+1) Portrait images seem to be positioned oddly on desktop when lightboxed

@@ -1,0 +1,222 @@
+<?php get_header(); ?>
+<?php  
+/*
+Template Name: newProjects
+*/
+?>
+
+<!-- Left / Right arrows -->
+<script>
+ $(document).keydown(function(e){
+    if (e.keyCode == 37) { 	
+	$(".leftArrow:visible").each( function() { this.onclick(); });
+       return false;
+    }
+});
+$(document).keydown(function(e){
+    if (e.keyCode == 39) { 	
+	$(".rightArrow:visible").each( function() { this.onclick(); });
+       return false;
+    }
+});
+</script>
+
+<script>
+//   $(document).ready(function () {
+//   	// $(".rightArrow").first().show();
+//   	// $(".hide").first().show();
+//   	// $('#159').removeClass('hide');
+// 	loadProject('159', '');
+// });
+  $( document ).ready(function()
+                {
+		      var $firstProject = $('.projectContent:first').attr('id');
+                    loadProject($firstProject, '0');
+                    $(".leftArrow").first().hide();
+                });
+</script>
+
+<script>
+function loadProject(projectId, currId) {
+	// Hide images for current id
+	var currImages = $('#' + currId +  ' img');
+	var currList = $("#" + currId + " img");
+	$('#'+ currId).addClass('projectContent');
+	currList.each(function(currIdx, currImg) {
+    	var currProduct = $(currImg);
+    	var currId = $(currImg).attr("id");
+		$('#'+ currId).addClass('projectContent');
+	});
+	// Hide left / right arrows for current id
+	if (projectId == '159')
+	{
+	  	$("#L" + currId).hide();
+	  	$("#R" + currId).hide();
+	  	$("#R" + projectId).show();		
+	}
+	else 
+	{
+	  	$("#L" + currId).hide();
+	  	$("#R" + currId).hide();
+		//$("#L" + projectId).show();
+	  	//$("#R" + projectId).show();
+		$("#L" + projectId).fadeIn(500);
+	  	$("#R" + projectId).fadeIn(500);
+	}
+	// Show images for new project
+	var images = $('#' + projectId +  ' img');
+	var listItems = $("#" + projectId + " img");
+
+	listItems.each(function(idx, img) {
+    	var product = $(img);
+    	var id = $(img).attr("id");
+    	$(img).attr("src", id);
+		$('#'+ projectId).removeClass('projectContent');
+	});
+	$('#'+ projectId).removeClass('projectContent');
+	//Scroll to top
+	$("body").scrollTop(0);
+}
+</script>
+
+<!-- Load all projects -->
+<?php
+	$argys = array('category' => '3', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order ID');
+	$posts = get_posts( $argys );
+	$currentIndex = 0;
+
+	foreach($posts as $post) :
+
+		$postName = $post -> ID;
+		$previous = $posts[$currentIndex - 1];
+		$next = $posts[$currentIndex + 1];
+		$thisPost = "'" . $postName . "'";
+		$nextPost = "'" . $next -> ID  . "'";
+		$prevPost = "'" . $previous -> ID . "'"; 
+		$currentPost = "'" . $postName . "'";
+		$currentIndex = $currentIndex + 1;
+
+		echo '<div class="leftArrow" id="L'. $postName . '" onclick="loadProject(' . $prevPost . ',' . $thisPost . ')"></div>';
+		if($nextPost != "''") 
+		{
+			echo '<div class="rightArrow" id="R'. $postName . '" onclick="loadProject(' . $nextPost . ',' . $thisPost . ')"></div>';
+		}
+		else
+		{
+			echo '<div class="rightArrow" id="R'. $postName . '" onclick="javascript:location.href=\'http://www.firststrikecomputing.co.uk/blog/contact/\'"></div>';
+
+		}
+		echo '<div class="newProject">';
+		echo '<div class="projectContent" id="'. $postName . '" style="width:100%" >';
+?>
+
+<!-- Load all images for each project -->
+<?php
+	$gallery = get_children( 'posts_per_page=-1&order=asc&post_type=attachment&post_mime_type=image&post_parent=' . $post -> ID);
+	$attr = array(
+    	'class' => "attachment-$size wp-post-image",
+	);
+	foreach( $gallery as $image ) {
+
+        $imageName = basename(wp_get_attachment_url( $image -> ID));
+    	if (strpos($imageName,'_Main') == false) {
+      		if (strpos($imageName,'_Rollover') == false) {
+  				$link = wp_get_attachment_url($image->ID);
+  			    $full = "'" . $link . "'"; 
+  			    echo '<div class="shadow" onclick="ImageViewMode('. $full . ')"><img src="" id="' . $link . '" title="" alt=""/></div>';
+   			}
+		}
+	}
+?>
+
+<?php 
+	echo '</div>';
+	echo '</div>';
+	endforeach; 
+?>
+
+<!-- Load Project on arrow press -->
+<script>
+function loadProject(projectId, currId) {
+	// Hide images for current id
+	var currImages = $('#' + currId +  ' img');
+	var currList = $("#" + currId + " img");
+	$('#'+ currId).addClass('projectContent');
+	currList.each(function(currIdx, currImg) {
+    	var currProduct = $(currImg);
+    	var currId = $(currImg).attr("id");
+		$('#'+ currId).addClass('projectContent');
+	});
+	// Hide left / right arrows for current id
+  	$("#L" + currId).hide();
+  	$("#R" + currId).hide();
+	$("#L" + projectId).show();
+  	$("#R" + projectId).show();
+	// Show images for new project
+	var images = $('#' + projectId +  ' img');
+	var listItems = $("#" + projectId + " img");
+
+	listItems.each(function(idx, img) {
+    	var product = $(img);
+    	var id = $(img).attr("id");
+    	$(img).attr("src", id);
+		$('#'+ projectId).removeClass('projectContent');
+	});
+	$('#'+ projectId).removeClass('projectContent');
+	//Scroll to top
+	$("body").scrollTop(0);
+}
+</script>
+
+<!-- Full screen images -->
+<script>
+function ImageViewMode(bgImg){
+	// $('#' + bgImg).width(1680); // Units are assumed to be pixels
+	// $('#' + bgImg).height(1050);
+	// $('#' + bgImg + ' img').css({'width' : '1680px' , 'height' : '1050px'});
+	// $("#" + bgImg).css('height','10');
+	// $("#" + bgImg).css('width','10');
+	// $(this).css("width", maxWidth); // Set new width
+	// $("#" + bgImg).css("height", "1050px"); 
+	// $("#" + bgImg).css("width", "1680px"); 
+	// $("." + bgImg).css("height", "1050px"); 
+	// $("." + bgImg).css("width", "1680px");
+	// alert(bgImg);
+	// $("." + bgImg).css("height", "1050px"); 
+	// $("." + bgImg).css("width", "1680px");
+	$('.newProject').css('background-image', 'url(' + bgImg + ')');
+	$('.newProject').css('z-index', '-5');
+
+}
+</script>
+
+<!-- Change link on last arrow to Contact -->
+<script>
+	//$(".rightArrow").last().prop("onClick", "javascript:location.href='google.com'");
+	//$(".rightArrow").last().addClass('highlight');
+</script>
+
+   <script>
+ $(function() {      
+      //Enable swiping...
+      $(".newProject").swipe( {
+        //Generic swipe handler for all directions
+        swipeLeft:function(event, direction, distance, duration, fingerCount) {
+    //       alert("test");
+    //       var elem = document.getElementById("rightArrow");
+    // elem.onclick.apply(elem);
+    // loadProject('311', '159');
+	$(".rightArrow:visible").each( function() { this.onclick(); });
+        },
+        swipeRight:function(event, direction, distance, duration, fingerCount){
+        $(".leftArrow:visible").each( function() { this.onclick(); });	
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+         threshold:0
+      });
+    });
+</script>  
+
+<div class = "testMenu">
+	<ul class="nav"><li><a class="active" href="newprojects">Projects</a></li><li><a class="inactive" href="contact">Office</a></li></ul>
+</div>

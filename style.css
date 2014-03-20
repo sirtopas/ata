@@ -1,0 +1,736 @@
+/*
+Theme Name: ATA
+Theme URI: http://firststrikecomputing.co.uk/
+Description: Amin Taha Architects
+Author: James Brett
+Author URI: http://firststrikecomputing.co.uk/
+Version: 2.1
+Tags: architecture
+*/
+
+body{
+	background-color: white;
+	font-size: 12px;
+	width: 100%;
+	height: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+	font-family:"Apercu Medium", Calibri, sans-serif; 
+}
+
+footer{
+	background-color: white;
+}
+
+/* Removed lightbox... */
+/*.imgShadow
+{
+	box-shadow:0 0 10px #404040;
+    -webkit-box-shadow:0 0 10px #404040;
+    -moz-box-shadow:0 0 10px #404040;
+}*/
+
+.title{
+	text-align: center;
+	color: white;
+	position: inline;
+	top: 10px;
+	text-transform: capitalize;
+	font-size: 20px;
+	font-weight: 300;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.homeImage{
+    min-height: 100%;
+    min-width: 1024px;
+  	width: 100%;
+  	height: auto;
+  	position: fixed;
+}
+
+.container{
+}
+
+.navbar{
+	width: 100%;
+}
+
+.nav{
+	text-align: center;
+	color: black;
+	font-weight: 300;
+	padding-bottom: 5px;
+}
+
+.testMenu{
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	bottom: 0px;
+	height: 50px;
+	background-color: white;
+	vertical-align: middle;
+	padding-bottom: 5px;
+	margin-left:auto;
+	margin-right:auto;
+	/* JB - Removing split border*/	
+	/*	border:1px solid #ccc;	
+	    border-width:1px 0;*/
+	z-index: 3;
+	padding-top:10px;
+}
+	.testMenu li{
+		display: inline;
+		text-align:center;
+		
+	}
+	.testMenu ul{
+		font-size: 20px;
+		font-weight: normal;
+		color: black;
+		list-style:none;
+		margin:0;
+		padding:0;
+		margin-left:-10px;
+		text-align:center;
+	}
+	.testMenu a{
+		display:inline-block;
+		padding: 8px;
+	}
+	.testMenu a:hover{
+		color:#6D6D62;
+	}
+
+.active{
+	text-decoration: none;	
+	border-bottom: 2px solid #000;
+	padding-bottom: 3px; 
+	color: black;
+}
+
+.inactive{
+	text-decoration: none;	
+	color: black;
+}
+	
+.topMenu{
+	position: fixed;
+	z-index: 3;
+	width: 100%;
+	top: 0px;
+	height: 30px;	
+	text-align: center;
+	background-color: white;
+	color: black;
+ 	font-size:15pt;
+	-webkit-text-stroke: 0.Xpx;
+	padding-bottom: 12px; 
+	padding-top:15px;
+	/* JB - Removing split border*/
+	/*border:1px solid #ccc;
+	border-width:1px 0;*/
+}
+
+.projectMenu{
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	bottom: 15px;
+	height: 50px;
+}
+	.projectMenu ul{
+		font-size: 30px;
+	}
+
+.btn{
+	text-align: center;
+}
+
+.newsItem{
+	margin-bottom: 10px;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+	.newsItem a {
+		color:#000000;
+		text-decoration:underline;
+	}
+	.newsItem a:hover {
+		color:#6D6D62;
+		text-decoration:none;
+	}
+	.newsItem img {
+		border:0;
+	}
+
+.newsContainer{
+	margin-bottom: 100px;
+}
+
+.contactItem{
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 55px;
+	margin-bottom: 100px;
+}
+	.contactItem a {
+		color:#000000;
+		text-decoration:underline;
+	}
+	.contactItem a:hover {
+		color:#6D6D62;
+		text-decoration:none;
+	}
+	.contactItem img{ 
+		max-width: 100%;
+		width:100%;
+		max-height: 100%;
+		height: 100%;
+		margin-bottom: 10px;
+		margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		border:0;
+	}
+
+.hero-unit{
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 50px;
+}
+	.hero-unit a{
+		color: black;
+	}
+	.hero-unit img{
+		margin-top: 20px;
+		margin-bottom: 5px;
+	}
+
+.projects{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.page{
+	height: 1080px;
+}
+
+.postDate{
+	font-weight:bold;
+}
+
+.project{
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+}
+
+.projectH{
+	height: 400px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+	.projectH img{ 
+		width: 400px;
+		height: 325px;	
+	 }
+
+ul.images {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	white-space: nowrap;
+	overflow-x: auto;
+	width: 100%;
+	padding-top: auto;
+	padding-bottom: auto;
+	overflow-y: none;
+	position: relative;
+}
+	ul.images li{
+		display: inline;
+		margin-right: 150px;
+		margin-left: 150px;
+		margin-top: auto;
+		margin-bottom: auto;
+	}	 
+
+.projectImage{
+  height: 600px;
+  width: 600px;
+}
+
+.imageHolder{
+	height: 100%;
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+.roll{
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+
+.roll .rollover, .roll:hover .regular {
+	display: none;
+	margin: 0;
+	padding: 0;
+}
+
+.roll:hover .rollover {
+	position: relative;
+	display: inline;
+}
+
+.projectTitle{
+	text-transform: capitalize;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto
+}
+
+#lightbox {
+    position:fixed; /* keeps the lightbox window in the current viewport */
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+   	/* background:url(overlay.png) repeat; */
+ 	background:#ffffff;
+    text-align:center;
+	z-index:4;
+ 	display:none;
+	
+}
+  
+#lightbox img {
+	/* JB */
+    /*box-shadow:0 0 25px #111;
+    -webkit-box-shadow:0 0 25px #111;
+    -moz-box-shadow:0 0 25px #111;*/
+	max-width:95%;
+	max-height: auto;
+
+}
+
+/*Scroll enhancements*/
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    visibility: hidden;
+    background: lightgray; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: gray; 
+    -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.5); 
+}
+
+/* Inactive */
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,0,0,0.5); 
+}
+
+/* Corner */
+::=webkit-scrollbar-corner{
+	height: 50px;
+}
+
+/* Some extra special project stuff */
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans+Std+Light);
+html,body{height:100%;}
+*{outline:none;}	
+.bodynew{margin:0px; padding:0px; background:#000;}
+#toolbar{position:fixed; z-index:3; right:10px; top:10px; padding:5px; background:url(fs_img_g_bg.png);}
+#toolbar img{border:none;}
+#img_title{position:fixed; z-index:3; left:10px; top:10px; padding:10px; background:url(fs_img_g_bg.png); color:#FFF; font-family:'Josefin Sans Std Light', arial, serif; font-size:24px; text-transform:uppercase;}
+#bg{position:fixed; z-index:1; overflow:hidden; width:100%; height:100%;}
+#bgimg{display:none; -ms-interpolation-mode: bicubic;}
+#preloader{position:relative; z-index:3; width:32px; padding:20px; top:80px; margin:auto; background:#000;}
+#thumbnails_wrapper{z-index:2; position:fixed; bottom:0; width:100%; background:url(empty.gif); /* stupid ie needs a background value to understand hover area */}
+#outer_container{position:relative; padding:0; width:100%; margin:40px auto;}
+#outer_container .thumbScroller{position:relative; overflow:hidden; background:url(fs_img_g_bg.png);}
+#outer_container .thumbScroller, #outer_container .thumbScroller .container, #outer_container .thumbScroller .content{height:170px;}
+#outer_container .thumbScroller .container{position:relative; left:0;}
+#outer_container .thumbScroller .content{float:left;}
+#outer_container .thumbScroller .content div{margin:5px; height:100%;}
+#outer_container .thumbScroller img{border:5px solid #fff;}
+#outer_container .thumbScroller .content div a{display:block; padding:5px;}
+
+.nextImageBtn, .prevImageBtn{display:block; position:absolute; width:50px; height:50px; top:50%; margin:-25px 10px 0 10px; z-index:3; filter:alpha(opacity=40); -moz-opacity:0.4; -khtml-opacity:0.4; opacity:0.4;}
+.nextImageBtn:hover,.prevImageBtn:hover{filter:alpha(opacity=80); -moz-opacity:0.8; -khtml-opacity:0.8; opacity:0.8;}
+.nextImageBtn{right:0; background:#000 url(nextImgBtn.png) center center no-repeat;}
+.prevImageBtn{background:#000 url(prevImgBtn.png) center center no-repeat;}
+
+.leftArrow{
+	float: left;
+	width: 50px;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	padding-top: auto;
+	bottom: 15px;
+	background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') center center no-repeat;
+	background-color: white;
+	display: none;
+	position: fixed;
+	z-index: 2;
+	opacity:1.0;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.rightArrow{
+	float: right;
+	width: 50px;
+	height: 100%;
+	right: 0;
+	position: fixed;
+	bottom: 15px;
+	background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') center center no-repeat;
+	background-color: white;
+	display: none;
+	position: fixed;
+	z-index: 2;
+	opacity:1.0;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.leftArrow:hover
+{
+	opacity:0.4;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+	transition: opacity 1s ease-in-out;
+}
+
+.rightArrow:hover
+{
+	opacity:0.4;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+	transition: opacity 1s ease-in-out;
+}
+
+.projectOverflow{
+	width: 100%;
+}
+
+.newProject{
+	margin-top: 75px;
+}
+	.newProject img{ 
+		max-width: 80%;
+		margin-bottom: 120px;
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		/* Added this to remove img borders in IE */
+		border:0;
+		/* JB */
+		/*box-shadow: 10px 10px 5px #888888;*/
+	}
+
+.center{
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.projectContent{
+	display: none;
+	width: 100%;
+}
+
+.spacer{
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+/* Text above images */
+.projectText{
+	max-width: 80%;
+	height: 100%;
+	color: black;
+	font-size: 15pt;
+	margin-bottom: 80px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	border:0;
+}
+
+.textHolder{
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+/* Mobile Style Sheet */
+
+/* iPad Landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) { 
+	.rightArrow{
+		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') bottom center no-repeat;
+		margin-bottom: 15px;
+		z-index: 4;
+	}
+
+	.leftArrow{
+		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') bottom center no-repeat;
+		margin-bottom: 15px;
+		z-index: 4;
+	}
+
+	.newProject img{ 
+		
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+
+	.newProject{
+		margin-top: 40px;
+	}
+}
+
+
+/* iPad Portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	.rightArrow{
+		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') bottom center no-repeat;
+		margin-bottom: 15px;
+		z-index: 4;
+	}
+
+	.leftArrow{
+		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') bottom center no-repeat;
+		margin-bottom: 15px;
+		z-index: 4;
+	}
+
+	.newProject img{ 
+		
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+
+	.newProject{
+		margin-top: 40px;
+	}
+}
+
+/*Retina iPad */
+@media only screen and (min-device-width: 1536px) and (max-device-width: 2048px) and (orientation : landscape)and (-webkit-min-device-pixel-ratio: 2) {
+     .rightArrow{
+		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') bottom center no-repeat;
+		margin-bottom: 15px;
+		z-index: 4;
+		margin-right: 5px;
+	}
+
+	.leftArrow{
+		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') bottom center no-repeat;
+		margin-bottom: 15px;
+		z-index: 4;
+		margin-left: 5px;
+	}
+
+	.newProject img{ 
+		
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+
+	.newProject{
+		margin-top: 40px;
+	}
+}
+
+/*iPhone 2G-4S in landscape*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) {
+	.leftArrow{
+		width: 20px;
+		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') bottom center no-repeat;
+		margin-bottom: 5px;
+		margin-left: 5px;
+		z-index: 4;
+	}
+
+	.rightArrow{
+		width: 20px;
+		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') bottom center no-repeat;
+		margin-bottom: 5px;
+		margin-right: 5px;
+		z-index: 4;
+	}
+
+	.topMenu{
+		height: 20px;	
+	}
+
+	.testMenu{
+		height: 20px;
+		padding-bottom: 25px; 
+	}
+
+	.newProject{
+		margin-top: 20px;
+	}
+
+	.newProject img{
+		
+		height:auto;
+		margin-bottom: 15px;
+		margin-top: 15px;
+	}
+
+	.projectFooter{
+		height:15px;
+	}
+
+
+	#newsContainer
+	{
+		margin-top:15px;
+	}
+}
+
+/*iPhone 2G-4S in portrait*/
+/* iPhone 5 too..*/
+@media handheld, screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) {
+
+	.projectFooter{
+		height:20px;
+	}
+
+	.leftArrow{
+		width: 50px;
+		height:50px;
+		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') bottom center no-repeat;
+		margin-bottom: 0px;
+		margin-left: 0px;
+		z-index: 4;
+	}
+
+	.rightArrow{
+		width: 50px;
+		height:50px;
+		background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') bottom center no-repeat;
+		margin-bottom: 0px;
+		margin-right: 0px;
+		z-index: 4;
+	}
+
+	.topMenu{
+		height: 20px;	
+	}
+
+	.testMenu{
+		height: 25px;
+		padding-bottom: 25px; 
+		padding-top:0px;
+	}
+
+	.newProject{
+		margin-top: 20px;
+		
+		margin-bottom: 75px;
+	}
+		.newProject img{ 
+			
+			margin-bottom: 50px;
+			margin-top: 0px;
+		}
+
+	.news{
+		margin-bottom:25px;
+	}
+
+	.contact{
+		margin-bottom:25px;
+	}
+
+	.contactItem{
+		width:90%;
+	}
+		.contactItem img{ 
+			width:100%;
+		}
+
+	/* Text above images */
+	.projectText{
+		font-size: 10pt;
+		padding-top: 5px;
+		padding-left: 5px;
+		padding-right: 5px;
+		margin-bottom: 20px;
+		margin-top: 30px;
+	}
+
+	.textHolder{
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+	}
+
+}
+
+/* > iPhone 4S  */
+@media only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
+.newProject{
+	margin-top: 50px;
+}
+	.newProject img{ 
+		
+		margin-bottom: 60px;
+		margin-top: 20px;
+	}
+.leftArrow{
+	width: 15px;
+	background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowLeft.png') bottom center no-repeat;
+	z-index:10000;
+	height:20px;
+}
+
+.rightArrow{
+	width: 15px;
+	background: url('http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/ArrowRight.png') bottom center no-repeat;
+	z-index:10000;
+	height:20px;
+	}
+
+.topMenu{
+	padding-bottom: 1px; 
+	padding-top:2px;
+}
+
+.testMenu{
+	padding-bottom: 10px;
+}	
+}

@@ -1,0 +1,320 @@
+$(window).load(function () {
+    $(function () {
+        $('img.rollover').hover(function () {
+            var e = $(this);
+            e.data('originalSrc', e.attr('src'));
+            e.attr('src', e.attr('data-rollover'));
+        }, function () {
+            var e = $(this);
+            e.attr('src', e.data('originalSrc'));
+        });
+    });
+});
+
+
+$(document).keydown(function (e) {
+    if (e.keyCode == 37 && !$("#lightbox").is(":visible")) {
+        jQuery('html,body').animate({
+            scrollTop: 0
+        }, 0);
+        $(".leftArrow:visible").each(function () {
+            this.onclick();
+        });
+        jQuery('html,body').animate({
+            scrollTop: 0
+        }, 0);
+        return false;
+    }
+});
+$(document).keydown(function (e) {
+    if (e.keyCode == 39 && !$("#lightbox").is(":visible")) {
+        jQuery('html,body').animate({
+            scrollTop: 0
+        }, 0);
+        $(".rightArrow:visible").each(function () {
+            this.onclick();
+        });
+        jQuery('html,body').animate({
+            scrollTop: 0
+        }, 0);
+        return false;
+    }
+});
+
+
+
+$(document).ready(function () {
+    var $firstProject = $('.projectContent:first').attr('id');
+	var allImages = $("img");
+    allImages.each(function (idx, img) {
+			//$(img).removeClass();
+			//$(img).addClass("lazy");
+		});
+	loadProject($firstProject, '0');
+	
+    /* not required?
+	$("img.lazy").lazyload({
+        effect: "fadeIn"
+    });*/
+
+FastClick.attach(document.body);
+
+});
+
+
+
+function loadProject(projectId, currId) {
+
+    jQuery('html,body').animate({
+        scrollTop: 0
+    }, 0);
+    $('#' + currId).addClass('projectContent');
+    $('#' + currId).addClass('projectContent');
+    $("#L" + currId).hide();
+    $("#R" + currId).hide();
+    $("#L" + projectId).show();
+    $("#R" + projectId).show();
+    $('.leftArrow:first').hide();
+	
+		
+	if(projectId != "contact" && projectId != "news"){
+		var currImages = $('#' + currId + ' img');
+		var currList = $("#" + currId + " img");
+		var images = $('#' + projectId + ' img');
+		var listItems = $('#' + projectId + " img");
+		
+		listItems.each(function (idx, img) {
+			var src = $(img).attr("src");
+			$(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader.gif");
+		});
+		
+		
+			
+		jQuery('html,body').animate({
+			scrollTop: 0
+		}, 0);
+		$('#' + projectId).removeClass('projectContent');
+		var $maxImgHeight = $(window).height() - 200;
+		$('#newProject .lazy').css({
+			"max-height": $maxImgHeight + 'px'
+		});
+		jQuery('html,body').animate({
+			scrollTop: 0
+		}, 0);
+		
+		var $maxImgHeight2 = $(window).height();
+		$maxImgHeight2 = $maxImgHeight2 - 150;
+		$('.lazy').css({
+			"max-height": $maxImgHeight2 + 'px'
+		});
+		$("img.lazy").lazyload({
+        effect: "fadeIn"
+    });
+	$('.projectFooter').hide();
+	}
+	else
+	{
+		$('.projectFooter').hide();
+		$('#' + projectId).removeClass('projectContent');
+		$("img.lazy").lazyload({
+        //effect: "fadeIn"
+    });
+	}
+	
+    jQuery('html,body').animate({
+        scrollTop: 0
+    }, 0);
+    $('#projectsLink').removeClass('inactive');
+    $('#projectsLink').addClass('active');
+    $('#contactLink').removeClass('active');
+    $('#contactLink').addClass('inactive');
+
+}
+
+
+function loadContact() {
+var contactImages = $(".contactItem img");
+    contactImages.each(function (idx, img) {
+	//window.alert("width" + $(img).attr("width"));
+	//window.alert("height" + $(img).attr("height"));
+	//window.alert($(img).classes());
+	$(img).show();
+	$(img).addClass("lazy");
+	$(img).width(300).height(300);
+        $(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader_300.gif");
+    });
+    var $visibleProject = "";
+    try {
+        $visibleProject = $(".rightArrow:visible").first().attr("id");
+        $visibleProject = $visibleProject.substring(1);
+    } catch (err) {
+        $visibleProject = $(".leftArrow:visible").first().attr("id");
+        $visibleProject = $visibleProject.substring(1);
+    }
+	
+    loadProject('contact', $visibleProject);
+    $(".contactItem a").each(function () {
+        $(this).addClass('lightbox_trigger');
+    });
+
+    $('#contactLink').removeClass('inactive');
+    $('#contactLink').addClass('active');
+    $('#projectsLink').removeClass('active');
+    $('#projectsLink').addClass('inactive');
+    $('.lightbox_trigger').click(function (e) {
+        e.preventDefault();
+        var image_href = $(this).attr("href");
+        $('#lightbox').html('<img src="' + image_href + '" />');
+        var $maxLightboxImgHeight = $(window).height() - 80;
+        $('#lightbox img').css({
+            "max-height": $maxLightboxImgHeight + 'px'
+        });
+		$('#lightbox img').css({
+			"padding-top":  (($(window).height() - $(this).height()) / 8 ) + 'px'
+		});
+        $('#lightbox').fadeIn(500);
+		
+    });
+}
+
+
+function loadNews() {
+    var $visibleProject = "";
+    $visibleProject = $(".rightArrow:visible").first().attr("id").substring(1);
+	var newsImages = $(".newsItem img");
+    newsImages.each(function (idx, img) {
+        $(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader_300.gif");
+		$(img).removeClass();
+		$(img).addClass('lazy');
+    });
+	var contactImages = $(".contactItem img");
+    contactImages.each(function (idx, img) {
+        $(img).attr("style", "");
+		$(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader_300.gif");
+    });
+	
+    loadProject('news', $visibleProject);
+	
+    /*$("img.lazy").lazyload({
+        effect: "fadeIn"
+    });*/
+    $(".newsItem a").each(function () {
+        $(this).addClass('lightbox_trigger');
+    });
+    $('.lightbox_trigger').click(function (e) {
+        e.preventDefault();
+        var image_href = $(this).attr("href");
+        $('#lightbox').html('<img src="' + image_href + '" />');
+        var $maxLightboxImgHeight = $(window).height() - 80;
+        $('#lightbox img').css({
+            "max-height": $maxLightboxImgHeight + 'px'
+        });
+		$('#lightbox img').css({
+			"padding-top":  0 + 'px'
+		});
+		$('#lightbox img').css({
+			"padding-top":  (($(window).height() - $(this).height()) / 16) + 'px'
+		});
+        $('#lightbox').fadeIn(500);
+
+    });
+    $('#contactLink').removeClass('inactive');
+    $('#contactLink').addClass('active');
+    $('#projectsLink').removeClass('active');
+    $('#projectsLink').addClass('inactive');
+}
+
+
+jQuery(document).ready(function ($) {
+    var lightbox =
+        '<div id="lightbox">' +
+        '</div>';
+    $('body').append(lightbox);
+    $('.lightbox_trigger').click(function (e) {
+        e.preventDefault();
+        var image_href = $(this).attr("href");
+        $('#lightbox').html('<img src="' + image_href + '" />');
+        var $maxLightboxImgHeight = $(window).height() - 80;
+        $('#lightbox img').css({
+            "max-height": $maxLightboxImgHeight + 'px'
+        });
+		
+        $('#lightbox').fadeIn(500);
+
+		$('#lightbox img').css({
+			"padding-top":  (($(window).height() - $(this).height()) / 4 ) + 'px'
+		});
+    });
+	var contactImages = $(".contactItem img");
+    contactImages.each(function (idx, img) {
+        var src = $(img).attr("src");
+        $(img).attr("data-original", src);
+        $(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader_300.gif");
+        $(img).addClass('lazy');
+    });
+	var newsImages = $(".newsItem img");
+    newsImages.each(function (idx, img) {
+        var src = $(img).attr("src");
+        $(img).attr("data-original", src);
+        $(img).attr("src", "http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader_300.gif");
+        $(img).addClass('lazy');
+    });
+    $('#lightbox').live('click', function () {
+        $('#lightbox').fadeOut(500);
+    });
+
+    $(window).resize(function () {
+        $('#lightbox').css('height',  '100%');
+        $('#lightbox img').css('height', 'auto');
+		 $('#lightbox img').css('max-height', '95%');
+		  
+        var $maxContentImgHeight = $(window).height() * 0.8;
+        $('#lightbox img').css({
+            "max-height": $maxContentImgHeight + 'px'
+        });
+		var $maxImgHeight2 = $(window).height();
+		$maxImgHeight2 = $maxImgHeight2 - 150;
+		$('.lazy').css({
+			"max-height": $maxImgHeight2 + 'px'
+		});
+		$('#lightbox img').css({
+			"padding-top":  0 + 'px'
+		});
+		$('#lightbox img').css({
+			"padding-top":  (($('#lightbox').height() - $(this).height()) / 4 ) + 'px'
+		});
+		// This is the code causing problems for rotating screen
+    });
+});
+
+
+function loadProjects() {
+    var $visibleProject = $visibleProject = $(".leftArrow:visible").first().attr("id");
+    var $firstProject = $('.projectContent:first').attr('id');
+    if ($visibleProject == "Lcontact") {
+        loadProject($firstProject, 'contact');
+    }
+    if ($visibleProject == "Lnews") {
+        loadProject($firstProject, 'news');
+    }
+
+}
+
+$(function () {
+    //Enable swiping...
+        $("html").swipe({
+        //Generic swipe handler for all directions
+        swipeLeft: function (event, direction, distance, duration, fingerCount) {
+            $(".rightArrow:visible").each(function () {
+                this.onclick();
+            });
+        },
+        swipeRight: function (event, direction, distance, duration, fingerCount) {
+            $(".leftArrow:visible").each(function () {
+                this.onclick();
+            });
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+        threshold: 100
+    });
+});

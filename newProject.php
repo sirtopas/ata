@@ -1,0 +1,156 @@
+<?php get_header(); ?>
+<?php  
+/*
+	Template Name: newProjects
+*/
+?>
+
+<!-- Load all projects -->
+<?php
+	$argys = array('category' => '4', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order ID');
+	$posts = get_posts( $argys );
+	$currentIndex = 0;
+
+	foreach($posts as $post) :
+		$postName = $post -> ID;
+		$previous = $posts[$currentIndex - 1];
+		$next = $posts[$currentIndex + 1];
+		$thisPost = "'" . $postName . "'";
+		$nextPost = "'" . $next -> ID  . "'";
+		$prevPost = "'" . $previous -> ID . "'"; 
+		$currentPost = "'" . $postName . "'";
+		$currentIndex = $currentIndex + 1;
+		
+		setup_postdata($post);
+
+		$content = get_the_content();
+		$content = preg_replace('/(<)([img])(\w+)([^>]*>)/', '', $content);
+		$content = preg_replace("/<a href=.*?>(.*?)<\/a>/","",$content);
+		$content = apply_filters('the_content', $content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		$content = str_replace('<p>&nbsp;</p>', '', $content);
+		$content = preg_replace("/<p[^>]*><\\/p[^>]*>/", '', $content); 
+		$content = preg_replace("#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#", '', $content); 
+		
+		$frames = explode("-slide-", trim($content));
+
+		echo '<div class="leftArrow" id="L'. $postName . '" onclick="loadProject(' . $prevPost . ',' . $thisPost . ')"></div>';
+
+		if($nextPost != "''") 
+		{
+			echo '<div class="rightArrow" id="R'. $postName . '" onclick="loadProject(' . $nextPost . ',' . $thisPost . ')"></div>';
+		}
+		else
+		{
+			echo '<div class="rightArrow" id="R'. $postName . '" onclick="loadContact()"></div>';
+			$finalPost = $thisPost;
+		}
+		
+		echo '<div class="newProject">';
+		echo '<div class="projectContent" id="'. $postName . '" style="width:100%" >';
+
+//Load all images for each project
+		$gallery = get_children( 'posts_per_page=-1&order=asc&post_type=attachment&post_mime_type=image&post_parent=' . $post -> ID);
+		$attr = array(
+    		'class' => "attachment-$size wp-post-image",
+		);
+
+
+	foreach( $gallery as $image ) 
+	{
+        $imageName = basename(wp_get_attachment_url( $image -> ID));
+    	if (strpos($imageName,'_Main') == false) 
+    	{
+      		if (strpos($imageName,'_Rollover') == false) 
+      		{
+  				$link = wp_get_attachment_url($image->ID);
+  			    $full = "'" . $link . "'"; 
+				echo '<a class="lightbox_trigger" href="' . $link . '">';
+				echo '<img class="lazy" src="http://www.firststrikecomputing.co.uk/blog/wp-content/themes/ata/loader.gif" data-original="' . $link . '" id="" title="" alt=""/>';
+				echo '</a>';
+   			}
+		}
+	}
+
+	foreach ($frames as $textItem) 
+	{
+		$tmpTextItem = $textItem;
+		$tmpTextItem = str_replace("<p>","",$tmpTextItem);
+		$tmpTextItem = str_replace("</p>","",$tmpTextItem);
+		$tmpTextItem = str_replace("<a>","",$tmpTextItem);
+		$tmpTextItem = str_replace("</a>","",$tmpTextItem);
+		$tmpTextItem = str_replace(" ","",$tmpTextItem);
+		$tmpTextItem = trim($tmpTextItem);
+	
+		if (strlen($tmpTextItem) > 3)
+		{
+		
+			echo '<div class="projectText"><div class="textHolder">' . $textItem . '</div></div>';
+			echo '';
+		}
+	}
+?>
+
+<?php 
+	echo '</div>';
+	echo '</div>';
+	endforeach; 
+	echo '<div class="projectFooter"></div>';
+?>
+
+<!-- Load contact information -->
+<?php
+	echo '<div class="leftArrow" id="Lcontact" onclick="loadProject(' . $finalPost . ',\'contact\')"></div>';
+	echo '<div class="rightArrow" id="Rcontact" onclick="loadNews()"></div>';
+?>
+
+<div class="projectContent" id="contact" style="width:100%" >
+<div class="contactItem">
+
+<?php 
+$argys = array('category' => '2', 'posts_per_page' => 1);
+	$posts = get_posts( $argys );
+	foreach ( $posts as $post ) 
+	{
+		setup_postdata($post);
+		the_content();
+	}
+?>
+
+</div>
+</div>
+
+<!-- Load news information -->
+<?php 
+	echo '<div class="leftArrow" id="Lnews" onclick="loadContact()"></div>';
+?>
+
+<div class="projectContent" id="news" style="width:100%" >
+<div class="newsContainer">
+
+<?php $myposts = get_posts('cat=3&posts_per_page=-1'); // cat 2: news
+	foreach($myposts as $post) :
+		setup_postdata($post);
+?>
+
+<div class="spacer">
+<div class="newsItem">
+
+<div class="postDate">
+	<b><?php the_time('Y') ?></b>
+</div>
+
+<?php the_content(); ?>
+</div>
+</div>
+<?php endforeach; wp_reset_postdata(); ?>
+</div>
+</div>
+
+<div class = "testMenu">
+	<ul class="nav">
+		<li><a id="projectsLink" class="active" href="javascript:loadProjects();">Projects</a></li>
+		<li><a id="contactLink" class="inactive" href="javascript:loadContact();">Office</a></li>
+	</ul>
+</div>
+<?php get_footer(); ?>
