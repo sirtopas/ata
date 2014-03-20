@@ -151,6 +151,7 @@ var contactImages = $(".contactItem img");
     setLinkStatuses('contact');
     $('.lightbox_trigger').click(function (e) {
         e.preventDefault();
+		$('body').css("overflow-y","hidden");
         var image_href = $(this).attr("href");
         $('#lightbox').html('<img src="' + image_href + '" />');
         var $maxLightboxImgHeight = $(window).height() - 80;
@@ -161,7 +162,10 @@ var contactImages = $(".contactItem img");
 			"padding-top":  (($(window).height() - $(this).height()) / 8 ) + 'px'
 		});
         $('#lightbox').fadeIn(500);
-		
+    });
+	$('#lightbox').live('click', function () {
+        $('#lightbox').fadeOut(500);
+		$('body').css("overflow-y","scroll");
     });
 }
 
@@ -190,6 +194,7 @@ function loadNews() {
     });
     $('.lightbox_trigger').click(function (e) {
         e.preventDefault();
+		$('body').css("overflow-y","hidden");
         var image_href = $(this).attr("href");
         $('#lightbox').html('<img src="' + image_href + '" />');
         var $maxLightboxImgHeight = $(window).height() - 80;
@@ -204,6 +209,10 @@ function loadNews() {
 		});
         $('#lightbox').fadeIn(500);
 
+    });
+	$('#lightbox').live('click', function () {
+        $('#lightbox').fadeOut(500);
+		$('body').css("overflow-y","scroll");
     });
     setLinkStatuses('contact');
 }
@@ -226,6 +235,7 @@ jQuery(document).ready(function ($) {
     $('body').append(lightbox);
     $('.lightbox_trigger').click(function (e) {
         e.preventDefault();
+		$('body').css("overflow-y","hidden");
         var image_href = $(this).attr("href");
         $('#lightbox').html('<img src="' + image_href + '" />');
         var $maxLightboxImgHeight = $(window).height() - 80;
@@ -255,6 +265,7 @@ jQuery(document).ready(function ($) {
     });
     $('#lightbox').live('click', function () {
         $('#lightbox').fadeOut(500);
+		$('body').css("overflow-y","scroll");
     });
 
     $(window).resize(function () {
