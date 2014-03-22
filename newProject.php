@@ -210,10 +210,11 @@ Sort By<br>
 		//echo '<div id="'. $postId . '_th"  class="indexProjectBox">';
 		
 		echo '<div id="'. $postId . '"  class="indexProjectBox" data-yearstarted="' .  get_field('year_started') . '" data-yearcompleted="' .  get_field('year_completed') . '" data-category="' .  get_field('category') . '" data-status="' .  get_field('status') . '" data-location="' .  get_field('location') . '" data-uk="' .  $isUK . '">';
+		echo "<a class=\"indexProjectBoxImgLink\"  href=\"javascript:loadProject('" . $postId . "', 'index')\">";
 		echo '<div class="indexProjectBoxImgHolder" style="background-image: url(' . $icon_rollover['url'] . ')">'; 
 		echo "<img src='" . $icon['url'] . "'><br>";
-		echo "</div>";
-		echo the_field('project_title') . "<br>";
+		echo "</div></a>";
+		echo get_field('project_title') . "<br>";
 		if(get_field('year_completed') == '0')
 		{
 			echo get_field('year_started') . "<br>";
@@ -222,10 +223,10 @@ Sort By<br>
 		{
 			echo get_field('year_started') . " - " . get_field('year_completed') . "<br>";
 		}
-		echo the_field('category') . "<br>";
-		echo the_field('location') . "<br>";
-		echo the_field('description') . "<br>";
-		echo the_field('status') . "<br>";
+		echo get_field('category') . "<br>";
+		echo get_field('location') . "<br>";
+		echo get_field('description') . "<br>";
+		echo get_field('status') . "<br>";
 	$idTest = $idTest - 1;
 	echo '</div>';
 	endforeach; 
