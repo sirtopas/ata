@@ -106,9 +106,7 @@
 			echo '';
 		}
 	}
-?>
 
-<?php 
 	echo '</div>';
 	echo '</div>';
 	endforeach; 
@@ -173,8 +171,41 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 ?>
 <div class="projectContent" id="index" style="width:100%" >
 <div class="indexContainer">
-<center>No index content yet.</center>
 
+<?php
+    $argys = array('category' => '4', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order ID');
+	$posts = get_posts( $argys );
+	$currentIndex = 0;
+	$firstPost = true;
+	foreach($posts as $post) :
+		$postId = $post -> ID;
+		setup_postdata($post);
+		$content = get_the_content();
+		$content = preg_replace('/(<)([img])(\w+)([^>]*>)/', '', $content);
+		$content = preg_replace("/<a href=.*?>(.*?)<\/a>/","",$content);
+		$content = apply_filters('the_content', $content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		$content = str_replace('<p>&nbsp;</p>', '', $content);
+		$content = preg_replace("/<p[^>]*><\\/p[^>]*>/", '', $content); 
+		$content = preg_replace("#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#", '', $content); 
+		
+		$icon = get_field('icon');
+		$icon_rollover = get_field('icon_rollover');
+		echo '<div id="'. $postId . '_th"  class="indexProjectBox">';
+		echo '<div class="indexProjectBoxImgHolder" style="background-image: url(' . $icon_rollover['url'] . ')">'; 
+		echo "<img src='" . $icon['url'] . "'><br>";
+		echo "</div>";
+		echo strtoupper(the_field('project_title')) . "<br>";
+		echo the_field('year_started') . "<br>";
+		echo the_field('category') . "<br>";
+		echo the_field('location') . "<br>";
+		echo the_field('description') . "<br>";
+		echo the_field('status') . "<br>";
+
+	echo '</div>';
+	endforeach; 
+	
+	?>
 </div>
 </div>
 <div class = "testMenu">

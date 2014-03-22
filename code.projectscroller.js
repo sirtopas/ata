@@ -11,8 +11,14 @@ $(window).load(function () {
             e.attr('src', e.data('originalSrc'));
         });
     });
+$( ".indexProjectBoxImgHolder" ).mouseenter(function() {
+$(this).children('img').fadeOut(500);
+});
+$( ".indexProjectBoxImgHolder" ).mouseleave(function() {
+$(this).children('img').fadeIn(500);
 });
 
+});
 
 $(document).keydown(function (e) {
     if (e.keyCode == 37 && !$("#lightbox").is(":visible")) {
