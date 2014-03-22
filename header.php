@@ -9,8 +9,6 @@
     
     <title>Amin Taha</title>
     <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">  
-    <link href="../wp-content/themes/ata/sort_style.css" rel="stylesheet" type="text/css" />
-	<link href="../wp-content/themes/ata/sort_animate.css" rel="stylesheet" type="text/css" />
 
     <script type='text/javascript' src='http://code.jquery.com/jquery-1.4.4.min.js'></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>

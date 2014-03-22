@@ -43,7 +43,7 @@
 		$content = preg_replace("/<p[^>]*><\\/p[^>]*>/", '', $content); 
 		$content = preg_replace("#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#", '', $content); 
 		
-		$frames = explode("-slide-", trim($content));
+
 		if($firstPost == true)
 		{
 			echo '<div class="leftArrow" id="L'. $postName . '" onclick="loadProject(' . "'home'" . ',' . $thisPost . ')"></div>';
@@ -88,25 +88,8 @@
    			}
 		}
 	}
-
-	foreach ($frames as $textItem) 
-	{
-		$tmpTextItem = $textItem;
-		$tmpTextItem = str_replace("<p>","",$tmpTextItem);
-		$tmpTextItem = str_replace("</p>","",$tmpTextItem);
-		$tmpTextItem = str_replace("<a>","",$tmpTextItem);
-		$tmpTextItem = str_replace("</a>","",$tmpTextItem);
-		$tmpTextItem = str_replace(" ","",$tmpTextItem);
-		$tmpTextItem = trim($tmpTextItem);
 	
-		if (strlen($tmpTextItem) > 3)
-		{
-		
-			echo '<div class="projectText"><div class="textHolder">' . $textItem . '</div></div>';
-			echo '';
-		}
-	}
-
+	echo '<div class="projectText"><div class="textHolder">' . get_field('project_text') . '</div></div>';
 	echo '</div>';
 	echo '</div>';
 	endforeach; 
@@ -214,7 +197,7 @@ Sort By<br>
 		echo '<div class="indexProjectBoxImgHolder" style="background-image: url(' . $icon_rollover['url'] . ')">'; 
 		echo "<img src='" . $icon['url'] . "'><br>";
 		echo "</div></a>";
-		echo get_field('project_title') . "<br>";
+		echo strtoupper(get_field('project_title')) . "<br>";
 		if(get_field('year_completed') == '0')
 		{
 			echo get_field('year_started') . "<br>";
