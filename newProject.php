@@ -170,13 +170,22 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 	echo '<div class="leftArrow" id="Lindex" onclick="loadNews()"></div>';
 ?>
 <div class="projectContent" id="index" style="width:100%" >
-<div class="indexContainer">
+<div class="indexSortMenu">
+Sort By<br>
+<a href="javascript:sortProject()">PROJECT</a><br>
+<a href="javascript:sortDate()">DATE</a><br>
+<a href="javascript:sortLocation()">LOCATION</a><br>
+<a href="javascript:sortCategory()">CATEGORY</a><br>
+<a href="javascript:sortStatus()">STATUS</a><br>
+</div>
+<div id="indexCont" class="indexContainer">
 
 <?php
     $argys = array('category' => '4', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order ID');
 	$posts = get_posts( $argys );
 	$currentIndex = 0;
-	$firstPost = true;
+	$firstPost = true; 
+	$idTest = 100;
 	foreach($posts as $post) :
 		$postId = $post -> ID;
 		setup_postdata($post);
@@ -188,20 +197,36 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 		$content = str_replace('<p>&nbsp;</p>', '', $content);
 		$content = preg_replace("/<p[^>]*><\\/p[^>]*>/", '', $content); 
 		$content = preg_replace("#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#", '', $content); 
-		
+		if(strpos(get_field('location'), ', UK') !== FALSE)
+		{
+			$isUK = false;
+		}
+		else
+		{
+			$isUK = true;
+		}
 		$icon = get_field('icon');
 		$icon_rollover = get_field('icon_rollover');
-		echo '<div id="'. $postId . '_th"  class="indexProjectBox">';
+		//echo '<div id="'. $postId . '_th"  class="indexProjectBox">';
+		
+		echo '<div id="'. $postId . '"  class="indexProjectBox" data-yearstarted="' .  get_field('year_started') . '" data-yearcompleted="' .  get_field('year_completed') . '" data-category="' .  get_field('category') . '" data-status="' .  get_field('status') . '" data-location="' .  get_field('location') . '" data-uk="' .  $isUK . '">';
 		echo '<div class="indexProjectBoxImgHolder" style="background-image: url(' . $icon_rollover['url'] . ')">'; 
 		echo "<img src='" . $icon['url'] . "'><br>";
 		echo "</div>";
-		echo strtoupper(the_field('project_title')) . "<br>";
-		echo the_field('year_started') . "<br>";
+		echo the_field('project_title') . "<br>";
+		if(get_field('year_completed') == '0')
+		{
+			echo get_field('year_started') . "<br>";
+		}
+		else
+		{
+			echo get_field('year_started') . " - " . get_field('year_completed') . "<br>";
+		}
 		echo the_field('category') . "<br>";
 		echo the_field('location') . "<br>";
 		echo the_field('description') . "<br>";
 		echo the_field('status') . "<br>";
-
+	$idTest = $idTest - 1;
 	echo '</div>';
 	endforeach; 
 	

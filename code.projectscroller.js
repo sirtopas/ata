@@ -175,6 +175,25 @@ var contactImages = $(".contactItem img");
     });
 }
 
+function sortDate() {
+$('div#indexCont>div').tsort({attr:'data-yearstarted'},{attr:'data-yearcompleted'});
+}
+
+function sortStatus() {
+$('div#indexCont>div').tsort({attr:'data-status'});
+}
+
+function sortCategory() {
+$('div#indexCont>div').tsort({attr:'data-category'});
+}
+
+function sortLocation() {
+$('div#indexCont>div').tsort({attr:'data-uk'},{attr:'data-location'});
+}
+
+function sortProject() {
+$('div#indexCont>div').tsort({attr:'id'});
+}
 
 function loadNews() {
 
