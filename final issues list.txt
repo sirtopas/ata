@@ -1,0 +1,6 @@
+- full screen line images look jagged
+- list sort causes layout issues
+- arrow overlay
+- home screen logo
+- change IsUK to Right
+- text cut off on bottom at Index page
