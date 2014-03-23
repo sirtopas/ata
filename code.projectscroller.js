@@ -128,12 +128,12 @@ function loadProject(projectId, currId) {
 
     scrollTop: 0;
     var $toTop = $('.arrowDown');
-    $toTop.fadeIn();
+    $toTop.fadeIn(500);
 
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
+        if ($(this).scrollTop() > 80) {
             //alert("test");
-            $toTop.fadeOut();
+            $toTop.fadeOut(500);
         }
     });
 }
