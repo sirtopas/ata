@@ -1,7 +1,9 @@
 - full screen line images look jagged
+	- I think the reason for this is the high res of the images. Could add a loader image to lightbox but seems overkill.
 - list sort causes layout issues
+	- Not worked this out yet. Change the width from 18 -> something like 10 then it goes back to normal...
 - arrow overlay
-	- Need new arrow image
+	- Need new arrow image and smoother fadeout?
 - home screen logo
 	- Aligned. Should test on different screen sizes
 - change IsUK to Right
