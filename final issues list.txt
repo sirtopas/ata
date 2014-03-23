@@ -1,6 +1,9 @@
 - full screen line images look jagged
 - list sort causes layout issues
 - arrow overlay
+	- When you scroll down in a project, the next projects arrowDown will dissappear on load
 - home screen logo
+	- Aligned. Should test on different screen sizes
 - change IsUK to Right
 - text cut off on bottom at Index page
+	- Fixed. Check on other screen sizes
