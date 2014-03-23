@@ -131,7 +131,7 @@ function loadProject(projectId, currId) {
     $toTop.fadeIn();
 
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 300 || $toTop.is(':visible')) {
+        if ($(this).scrollTop() > 50) {
             //alert("test");
             $toTop.fadeOut();
         }
