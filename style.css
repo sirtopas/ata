@@ -19,6 +19,17 @@ Tags: architecture
 
 }
 
+.arrowDown{
+	background: url('arrowDown.png') center center no-repeat;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5px;
+  	height: 100px;
+  	position: fixed;
+  	bottom: 50px;
+}
+
 body{
 	background-color: white;
 	font-size: 12px;
@@ -34,13 +45,18 @@ footer{
 	background-color: white;
 }
 
-/* Removed lightbox... */
-/*.imgShadow
-{
-	box-shadow:0 0 10px #404040;
-    -webkit-box-shadow:0 0 10px #404040;
-    -moz-box-shadow:0 0 10px #404040;
-}*/
+.absolute-center {
+	width: 50%;
+	height: 10%;
+	overflow: auto;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+.center-container {
+	position: relative;
+	margin: auto;
+}
 
 .title{
 	text-align: center;
@@ -417,7 +433,7 @@ ul.images {
 
 /* Some extra special project stuff */
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans+Std+Light);
-html,body{height:100%;}
+body{height:100%;}
 *{outline:none;}	
 .bodynew{margin:0px; padding:0px; background:#000;}
 #toolbar{position:fixed; z-index:3; right:10px; top:10px; padding:5px; background:url(fs_img_g_bg.png);}

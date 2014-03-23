@@ -7,10 +7,10 @@
 <!-- Load home -->
 
 <div class="projectContent" id="home" style="width:100%" >
-<div class="homeContainer">
+  <div class="absolute-center">
+    <div class="center-container">
 <center><img src="../wp-content/themes/ata/LOGO.jpg"></center>
-
-
+</div>
 </div>
 </div>
 <?php 
@@ -75,18 +75,13 @@
 
 	foreach( $gallery as $image ) 
 	{
+		echo '<div class="arrowDown"></div>';
         $imageName = basename(wp_get_attachment_url( $image -> ID));
-    	if (strpos($imageName,'_Main') == false) 
-    	{
-      		if (strpos($imageName,'_Rollover') == false) 
-      		{
-  				$link = wp_get_attachment_url($image->ID);
-  			    $full = "'" . $link . "'"; 
-				echo '<a class="lightbox_trigger" href="' . $link . '">';
-				echo '<img class="lazy" src="loader.gif" data-original="' . $link . '" id="" title="" alt=""/>';
-				echo '</a>';
-   			}
-		}
+		$link = wp_get_attachment_url($image->ID);
+	    $full = "'" . $link . "'"; 
+		echo '<a class="lightbox_trigger" href="' . $link . '">';
+		echo '<img class="lazy" src="loader.gif" data-original="' . $link . '" id="" title="" alt=""/>';
+		echo '</a>';
 	}
 	
 	echo '<div class="projectText"><div class="textHolder">' . get_field('project_text') . '</div></div>';

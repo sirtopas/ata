@@ -125,7 +125,17 @@ function loadProject(projectId, currId) {
     jQuery('html,body').animate({
         scrollTop: 0
     }, 0);
-    
+
+    scrollTop: 0;
+    var $toTop = $('.arrowDown');
+    $toTop.fadeIn();
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300 || $toTop.is(':visible')) {
+            //alert("test");
+            $toTop.fadeOut();
+        }
+    });
 }
 
 
