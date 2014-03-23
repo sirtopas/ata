@@ -156,6 +156,7 @@ Sort By<br>
 <a href="javascript:sortCategory()">CATEGORY</a><br>
 <a href="javascript:sortStatus()">STATUS</a><br>
 </div>
+<div class="indexBlock">
 <div id="indexCont" class="indexContainer">
 
 <?php
@@ -210,6 +211,7 @@ Sort By<br>
 	endforeach; 
 	
 	?>
+</div>
 </div>
 </div>
 <div class = "testMenu">
