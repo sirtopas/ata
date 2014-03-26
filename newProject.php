@@ -9,7 +9,7 @@
 <div class="projectContent" id="home" style="width:100%" >
   <div class="absolute-center">
     <div class="center-container">
-<center><img src="../wp-content/themes/ata/LOGO.jpg"></center>
+<center><img id="homeLogo" src="../wp-content/themes/ata/LOGO.jpg"></center>
 </div>
 </div>
 </div>

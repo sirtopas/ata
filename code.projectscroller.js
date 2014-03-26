@@ -279,6 +279,10 @@ function loadHome() {
 
 
 jQuery(document).ready(function ($) {
+	if($(window).width() < 700)
+	{
+		$('#homeLogo').attr('src','../wp-content/themes/ata/logo_mobile.jpg'); // Fit logo to mobile screens whilst maintaining vertical centering
+	}
     var lightbox =
         '<div id="lightbox">' +
         '</div>';

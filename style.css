@@ -46,9 +46,9 @@ footer{
 }
 
 .absolute-center {
-	width: 50%;
-	height: 10%;
-	overflow: auto;
+	max-width: 100%;
+	max-height: 10%;
+	overflow: none;
 	margin: auto;
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
@@ -56,6 +56,8 @@ footer{
 .center-container {
 	position: relative;
 	margin: auto;
+	height: auto;
+	width:auto;
 }
 
 .title{
@@ -401,7 +403,7 @@ ul.images {
     -webkit-box-shadow:0 0 25px #111;
     -moz-box-shadow:0 0 25px #111;*/
 	max-width:95%;
-	max-height: auto;
+	/* max-height: auto; */
 }
 
 /*Scroll enhancements*/
