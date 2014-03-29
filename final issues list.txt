@@ -8,5 +8,9 @@
 - home screen logo
 	- Aligned. Should test on different screen sizes
 - change IsUK to Right
+	- Done
 - text cut off on bottom at Index page
 	- Fixed. Check on other screen sizes
+	- Fixed on Firefox also.
+- Rollovers a bit tempermental when you open the page (sometimes flash the rollover)
+	- Fixed: changed the background position to off the screen when not hovered over
