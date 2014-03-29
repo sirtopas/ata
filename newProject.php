@@ -176,7 +176,8 @@ Sort By<br>
 		$content = str_replace('<p>&nbsp;</p>', '', $content);
 		$content = preg_replace("/<p[^>]*><\\/p[^>]*>/", '', $content); 
 		$content = preg_replace("#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#", '', $content); 
-		if(strpos(get_field('location'), ', UK') !== FALSE)
+		$location = get_field('location');
+		if(substr($location,strlen($location) - 4) ==  ', UK')
 		{
 			$isUK = false;
 		}
@@ -184,11 +185,12 @@ Sort By<br>
 		{
 			$isUK = true;
 		}
+
 		$icon = get_field('icon');
 		$icon_rollover = get_field('icon_rollover');
 		//echo '<div id="'. $postId . '_th"  class="indexProjectBox">';
 		
-		echo '<div id="'. $postId . '"  class="indexProjectBox" data-yearstarted="' .  get_field('year_started') . '" data-yearcompleted="' .  get_field('year_completed') . '" data-category="' .  get_field('category') . '" data-status="' .  get_field('status') . '" data-location="' .  get_field('location') . '" data-uk="' .  $isUK . '">';
+		echo '<div id="'. $postId . '"  class="indexProjectBox" data-yearstarted="' .  get_field('year_started') . '" data-yearcompleted="' .  get_field('year_completed') . '" data-category="' .  get_field('category') . '" data-status="' .  get_field('status') . '" data-location="' .  $location . '" data-uk="' .  $isUK . '">';
 		echo "<a class=\"indexProjectBoxImgLink\"  href=\"javascript:loadProject('" . $postId . "', 'index')\">";
 		echo '<div class="indexProjectBoxImgHolder" style="background-image: url(' . $icon_rollover['url'] . ')">'; 
 		echo "<img src='" . $icon['url'] . "'><br>";
