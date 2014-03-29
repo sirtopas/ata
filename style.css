@@ -228,6 +228,7 @@ display: none;
 .indexProjectBox img{
 width:130px;
 height:130px;
+border:0;
 }
 .indexProjectBoxImgHolder {
 height:130px;

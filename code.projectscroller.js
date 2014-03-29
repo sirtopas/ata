@@ -185,38 +185,49 @@ var contactImages = $(".contactItem img");
     });
 }
 
+
 function sortDate() {
 $('div#indexCont').fadeTo('fast',0, function(){
     $('div#indexCont>div').tsort({attr:'data-yearstarted'},{attr:'data-yearcompleted'});
-	$('div#indexCont').fadeTo('fast',1);
+	$('div#indexCont').fadeTo('fast',1, function(){
+	$(this).css('filter', 'none');
+	});
 });
 }
 
 function sortStatus() {
 $('div#indexCont').fadeTo('fast',0, function(){
 	$('div#indexCont>div').tsort({attr:'data-status'});
-	$('div#indexCont').fadeTo('fast',1);
+	$('div#indexCont').fadeTo('fast',1, function(){
+	$(this).css('filter', 'none');
+	});
 });
 }
 
 function sortCategory() {
 $('div#indexCont').fadeTo('fast',0, function(){
 	$('div#indexCont>div').tsort({attr:'data-category'});
-	$('div#indexCont').fadeTo('fast',1);
+	$('div#indexCont').fadeTo('fast',1, function(){
+	$(this).css('filter', 'none');
+	});
 });
 }
 
 function sortLocation() {
 $('div#indexCont').fadeTo('fast',0, function(){
 	$('div#indexCont>div').tsort({attr:'data-uk'},{attr:'data-location'});
-	$('div#indexCont').fadeTo('fast',1);
+	$('div#indexCont').fadeTo('fast',1, function(){
+	$(this).css('filter', 'none');
+	});
 });
 }
 
 function sortProject() {
 $('div#indexCont').fadeTo('fast',0, function(){
 	$('div#indexCont>div').tsort({attr:'id'});
-	$('div#indexCont').fadeTo('fast',1);
+	$('div#indexCont').fadeTo('fast',1, function(){
+	$(this).css('filter', 'none');
+	});
 });
 }
 
