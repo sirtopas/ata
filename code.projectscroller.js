@@ -12,12 +12,12 @@ $(window).load(function () {
         });
     });
 	$( ".indexProjectBoxImgHolder" ).mouseenter(function() {
-		$(this).children('img').css('background-position', '0px 0px');
+		$(this).css('background-position', '0px 0px');
 		$(this).children('img').fadeOut(500);
 	});
 	$( ".indexProjectBoxImgHolder" ).mouseleave(function() {
 		$(this).children('img').fadeIn(500, function(){
-			$(this).css('background-position', '-1000px -1000px');
+			$(this).parent().css('background-position', '-1000px -1000px');
 		});
 	});
 
