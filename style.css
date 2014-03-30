@@ -59,6 +59,9 @@ footer{
 	height: auto;
 	width:auto;
 }
+.homeLogo{
+max-width:95%;
+}
 
 .title{
 	text-align: center;

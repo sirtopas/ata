@@ -7,11 +7,11 @@
 <!-- Load home -->
 
 <div class="projectContent" id="home" style="width:100%" >
-  <div class="absolute-center">
-    <div class="center-container">
-<center><img id="homeLogo" src="../wp-content/themes/ata/LOGO.jpg"></center>
-</div>
-</div>
+	<div class="absolute-center">
+		<div class="center-container">
+			<center><img class="homeLogo" src="../wp-content/themes/ata/LOGO.jpg"></center>
+		</div>
+	</div>
 </div>
 <?php 
 	echo '<div class="rightArrow" id="Rhome" onclick="loadProjects()"></div>';
