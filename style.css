@@ -57,7 +57,7 @@ footer{
 	position: relative;
 	margin: auto;
 	height: auto;
-	width:auto;
+	width: auto;
 }
 .homeLogo{
 max-width:95%;
@@ -84,23 +84,18 @@ max-width:95%;
   	position: fixed;
 }
 
-.container{
-}
-
 .navbar{
 	width: 100%;
 }
 
 .nav{
 	text-align: center;
-	color: black;
-	
+	color: black;	
 	padding-bottom: 5px;
 }
 
 .testMenu{
 	position: fixed;
-	z-index: 1;
 	width: 100%;
 	bottom: 0px;
 	height: 50px;
@@ -109,9 +104,6 @@ max-width:95%;
 	padding-bottom: 5px;
 	margin-left:auto;
 	margin-right:auto;
-	/* JB - Removing split border*/	
-	/*	border:1px solid #ccc;	
-	    border-width:1px 0;*/
 	z-index: 3;
 	padding-top:10px;
 }
@@ -163,9 +155,6 @@ max-width:95%;
 	-webkit-text-stroke: 0.Xpx;
 	padding-bottom: 12px; 
 	padding-top:15px;
-	/* JB - Removing split border*/
-	/*border:1px solid #ccc;
-	border-width:1px 0;*/
 }
 
 .projectMenu{
@@ -182,16 +171,16 @@ max-width:95%;
 .btn{
 	text-align: center;
 }
-#logo_header
-{
-display: none;
+
+#logo_header{
+	display: none;
 }
+
 .newsItem{
 	margin-bottom: 10px;
 	width: 300px;
 	margin-left: auto;
-	margin-right: auto;
-	
+	margin-right: auto;	
 }
 	.newsItem a {
 		color:#000000;
@@ -208,14 +197,17 @@ display: none;
 .newsContainer{
 	margin-bottom: 100px;
 }
+
 .homeContainer{
 	margin-top: 300px;
 }
+
 .indexBlock{
 	margin-bottom: 90px;
 	position: absolute;
 	top: 0;
 }
+
 .indexContainer{
 	margin-top: 60px;
 	margin-left:100px;
@@ -225,25 +217,23 @@ display: none;
 	width:18%;
 	height:20%;
 	margin: 5px 0px 5px 10px; 
-	display:inline-block;
+	float: left;
 	font-size:0.85em;
 }
 .indexProjectBox img{
-width:180px;
-height:180px;
-border:0;
+width:130px;
+height:130px;
 }
 .indexProjectBoxImgHolder {
-height:180px;
-width:180px;
-background-size:180px 180px;
+height:130px;
+width:130px;
+background-size:130px 130px;
 background-repeat:no-repeat;
-background-position: -1000px -1000px;
 }
 .indexSortMenu{
 	float: left;
 	width: 50px;
-	height: 65px;
+	height: 100px;
 	left: 10px;
 	top: 100px;
 	position: fixed;
@@ -408,7 +398,6 @@ ul.images {
     -webkit-box-shadow:0 0 25px #111;
     -moz-box-shadow:0 0 25px #111;*/
 	max-width:95%;
-	/* max-height: auto; */
 }
 
 /*Scroll enhancements*/
@@ -575,7 +564,7 @@ body{height:100%;}
 }
 
 /* Mobile Style Sheet */
-
+/*
 /* iPad Landscape */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) { 
 	.rightArrow{
@@ -818,4 +807,4 @@ body{height:100%;}
 .testMenu{
 	padding-bottom: 10px;
 }	
-}
+}*/

@@ -75,13 +75,19 @@
 
 	foreach( $gallery as $image ) 
 	{
-		echo '<div class="arrowDown"></div>';
-        $imageName = basename(wp_get_attachment_url( $image -> ID));
-		$link = wp_get_attachment_url($image->ID);
-	    $full = "'" . $link . "'"; 
-		echo '<a class="lightbox_trigger" href="' . $link . '">';
-		echo '<img class="lazy" src="../wp-content/themes/ata/loader.gif" data-original="' . $link . '" id="" title="" alt=""/>';
-		echo '</a>';
+		$imageName = basename(wp_get_attachment_url( $image -> ID));
+    	if (strpos($imageName,'_Main') == false) 
+    	{
+      		if (strpos($imageName,'_Rollover') == false) 
+      		{
+				echo '<div class="arrowDown"></div>';
+				$link = wp_get_attachment_url($image->ID);
+			    $full = "'" . $link . "'"; 
+				echo '<a class="lightbox_trigger" href="' . $link . '">';
+				echo '<img class="lazy" src="loader.gif" data-original="' . $link . '" id="" title="" alt=""/>';
+				echo '</a>';
+			}
+		}
 	}
 	
 	echo '<div class="projectText"><div class="textHolder">' . get_field('project_text') . '</div></div>';
@@ -176,8 +182,7 @@ Sort By<br>
 		$content = str_replace('<p>&nbsp;</p>', '', $content);
 		$content = preg_replace("/<p[^>]*><\\/p[^>]*>/", '', $content); 
 		$content = preg_replace("#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#", '', $content); 
-		$location = get_field('location');
-		if(substr($location,strlen($location) - 4) ==  ', UK')
+		if(strpos(get_field('location'), ', UK') !== FALSE)
 		{
 			$isUK = false;
 		}
@@ -185,12 +190,11 @@ Sort By<br>
 		{
 			$isUK = true;
 		}
-
 		$icon = get_field('icon');
 		$icon_rollover = get_field('icon_rollover');
 		//echo '<div id="'. $postId . '_th"  class="indexProjectBox">';
 		
-		echo '<div id="'. $postId . '"  class="indexProjectBox" data-yearstarted="' .  get_field('year_started') . '" data-yearcompleted="' .  get_field('year_completed') . '" data-category="' .  get_field('category') . '" data-status="' .  get_field('status') . '" data-location="' .  $location . '" data-uk="' .  $isUK . '">';
+		echo '<div id="'. $postId . '"  class="indexProjectBox" data-yearstarted="' .  get_field('year_started') . '" data-yearcompleted="' .  get_field('year_completed') . '" data-category="' .  get_field('category') . '" data-status="' .  get_field('status') . '" data-location="' .  get_field('location') . '" data-uk="' .  $isUK . '">';
 		echo "<a class=\"indexProjectBoxImgLink\"  href=\"javascript:loadProject('" . $postId . "', 'index')\">";
 		echo '<div class="indexProjectBoxImgHolder" style="background-image: url(' . $icon_rollover['url'] . ')">'; 
 		echo "<img src='" . $icon['url'] . "'><br>";
