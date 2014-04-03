@@ -1,9 +1,12 @@
 - full screen line images look jagged
 	- Less noticable with lower quality images
 - list sort causes layout issues
-	- Only happens on mobile now
+	- Only happens on mobile - happens on first load too
 - arrow overlay
 	- Still aliasing the .png
 - home screen logo
 	- Aligned. Should test on different screen sizes
 - Mobile stylesheets
+	- Bottom of Index page is cut off on landscape
+	- Safari (iPad / iPad Mini at least) is unusable for some reason. Very slow.
+	- The media query for iPhone 5 works with portrait but not landscape
