@@ -1,16 +1,9 @@
 - full screen line images look jagged
-	- I think the reason for this is the high res of the images. Could add a loader image to lightbox but seems overkill.
+	- Less noticable with lower quality images
 - list sort causes layout issues
-	- Not worked this out yet. Change the width from 18 -> something like 10 then it goes back to normal...
+	- Only happens on mobile now
 - arrow overlay
-	- Need new arrow image and smoother fadeout?
-	- Cropped arrow from Sam's mock. Slightly jagged.
+	- Still aliasing the .png
 - home screen logo
 	- Aligned. Should test on different screen sizes
-- change IsUK to Right
-	- Done
-- text cut off on bottom at Index page
-	- Fixed. Check on other screen sizes
-	- Fixed on Firefox also.
-- Rollovers a bit tempermental when you open the page (sometimes flash the rollover)
-	- Fixed: changed the background position to off the screen when not hovered over
+- Mobile stylesheets
