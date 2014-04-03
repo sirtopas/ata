@@ -14,24 +14,11 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../wp-content/themes/ata/jquery.touchSwipe.min.js"></script>
-	<script type="text/javascript" src="../wp-content/themes/ata/jquery.lazyload.min.js"></script>
+	  <script type="text/javascript" src="../wp-content/themes/ata/jquery.lazyload.min.js"></script>
   	<script type="text/javascript" src="../wp-content/themes/ata/jquery.classer.js"></script>
   	<script type="text/javascript" src="../wp-content/themes/ata/fastclick.js"></script>
-	<script type="text/javascript" src="../wp-content/themes/ata/jquery.tinysort.js"></script>
+  	<script type="text/javascript" src="../wp-content/themes/ata/jquery.tinysort.js"></script>
   	<script type="text/javascript" src="../wp-content/themes/ata/code.projectscroller.js"></script>
-<script type="text/javascript">
-WebFontConfig = { fontdeck: { id: '41878' } };
-
-(function() {
-  var wf = document.createElement('script');
-  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-  wf.type = 'text/javascript';
-  wf.async = 'true';
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(wf, s);
-})();
-</script>
 </head>
   <body>
     <div class = "topMenu">

@@ -84,7 +84,7 @@
 				$link = wp_get_attachment_url($image->ID);
 			    $full = "'" . $link . "'"; 
 				echo '<a class="lightbox_trigger" href="' . $link . '">';
-				echo '<img class="lazy" src="loader.gif" data-original="' . $link . '" id="" title="" alt=""/>';
+				echo '<img class="lazy" data-original="' . $link . '" id="" title="" alt=""/>';
 				echo '</a>';
 			}
 		}
@@ -154,14 +154,14 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 	echo '<div class="leftArrow" id="Lindex" onclick="loadNews()"></div>';
 ?>
 <div class="projectContent" id="index" style="width:100%" >
-<div class="indexSortMenu">
-Sort By<br>
-<a href="javascript:sortProject()">PROJECT</a><br>
-<a href="javascript:sortDate()">DATE</a><br>
-<a href="javascript:sortLocation()">LOCATION</a><br>
-<a href="javascript:sortCategory()">CATEGORY</a><br>
-<a href="javascript:sortStatus()">STATUS</a><br>
-</div>
+	<div class="indexSortMenu">
+		Sort By<br>
+		<a href="javascript:sortProject()">PROJECT</a><br>
+		<a href="javascript:sortDate()">DATE</a><br>
+		<a href="javascript:sortLocation()">LOCATION</a><br>
+		<a href="javascript:sortCategory()">CATEGORY</a><br>
+		<a href="javascript:sortStatus()">STATUS</a><br>
+	</div>
 <div class="indexBlock">
 <div id="indexCont" class="indexContainer">
 
@@ -192,13 +192,14 @@ Sort By<br>
 		}
 		$icon = get_field('icon');
 		$icon_rollover = get_field('icon_rollover');
-		//echo '<div id="'. $postId . '_th"  class="indexProjectBox">';
-		
+
 		echo '<div id="'. $postId . '"  class="indexProjectBox" data-yearstarted="' .  get_field('year_started') . '" data-yearcompleted="' .  get_field('year_completed') . '" data-category="' .  get_field('category') . '" data-status="' .  get_field('status') . '" data-location="' .  get_field('location') . '" data-uk="' .  $isUK . '">';
 		echo "<a class=\"indexProjectBoxImgLink\"  href=\"javascript:loadProject('" . $postId . "', 'index')\">";
 		echo '<div class="indexProjectBoxImgHolder" style="background-image: url(' . $icon_rollover['url'] . ')">'; 
 		echo "<img src='" . $icon['url'] . "'><br>";
 		echo "</div></a>";
+
+		echo "<div class=\"indexText\">";
 		echo strtoupper(get_field('project_title')) . "<br>";
 		if(get_field('year_completed') == '0')
 		{
@@ -212,6 +213,8 @@ Sort By<br>
 		echo get_field('location') . "<br>";
 		echo get_field('description') . "<br>";
 		echo get_field('status') . "<br>";
+		echo "</div>";
+		
 	$idTest = $idTest - 1;
 	echo '</div>';
 	endforeach; 
