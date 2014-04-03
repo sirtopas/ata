@@ -199,7 +199,6 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 		echo "<img src='" . $icon['url'] . "'><br>";
 		echo "</div></a>";
 
-		echo "<div class=\"indexText\">";
 		echo strtoupper(get_field('project_title')) . "<br>";
 		if(get_field('year_completed') == '0')
 		{
@@ -213,8 +212,7 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 		echo get_field('location') . "<br>";
 		echo get_field('description') . "<br>";
 		echo get_field('status') . "<br>";
-		echo "</div>";
-		
+
 	$idTest = $idTest - 1;
 	echo '</div>';
 	endforeach; 

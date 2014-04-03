@@ -220,15 +220,10 @@ footer{
 
 .indexProjectBox{
 	width:18%;
-	max-width: 18%;
 	height:20%;
 	margin: 5px 0px 5px 10px; 
 	float: left;
 	font-size:0.85em;
-}
-
-.indexText{
-	
 }
 
 .indexProjectBox img{
@@ -665,7 +660,6 @@ ul.images {
 		height:15px;
 	}
 
-
 	#newsContainer
 	{
 		margin-top:15px;
@@ -750,7 +744,10 @@ ul.images {
 		width: 80%;
 		padding-top: 20px;
 		padding-bottom: 20px;
+	}
 
+	.indexProjectBox{
+		width: 40%;
 	}
 
 }
