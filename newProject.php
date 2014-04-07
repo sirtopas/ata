@@ -84,7 +84,7 @@
 				$link = wp_get_attachment_url($image->ID);
 			    $full = "'" . $link . "'"; 
 				echo '<a class="lightbox_trigger" href="' . $link . '">';
-				echo '<img class="lazy" data-original="' . $link . '" id="" title="" alt=""/>';
+				echo '<img class="lazy" src="../wp-content/themes/ata/loader.gif" data-original="' . $link . '" id="" title="" alt=""/>';
 				echo '</a>';
 			}
 		}
@@ -182,7 +182,8 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 		$content = str_replace('<p>&nbsp;</p>', '', $content);
 		$content = preg_replace("/<p[^>]*><\\/p[^>]*>/", '', $content); 
 		$content = preg_replace("#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#", '', $content); 
-		if(strpos(get_field('location'), ', UK') !== FALSE)
+		$location = get_field('location');
+		if(substr($location,strlen($location) - 4) ==  ', UK')
 		{
 			$isUK = false;
 		}
@@ -193,7 +194,7 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 		$icon = get_field('icon');
 		$icon_rollover = get_field('icon_rollover');
 
-		echo '<div id="'. $postId . '"  class="indexProjectBox" data-yearstarted="' .  get_field('year_started') . '" data-yearcompleted="' .  get_field('year_completed') . '" data-category="' .  get_field('category') . '" data-status="' .  get_field('status') . '" data-location="' .  get_field('location') . '" data-uk="' .  $isUK . '">';
+		echo '<div id="'. $postId . '"  class="indexProjectBox" data-yearstarted="' .  get_field('year_started') . '" data-yearcompleted="' .  get_field('year_completed') . '" data-category="' .  get_field('category') . '" data-status="' .  get_field('status') . '" data-location="' .   $location  . '" data-uk="' .  $isUK . '">';
 		echo "<a class=\"indexProjectBoxImgLink\"  href=\"javascript:loadProject('" . $postId . "', 'index')\">";
 		echo '<div class="indexProjectBoxImgHolder" style="background-image: url(' . $icon_rollover['url'] . ')">'; 
 		echo "<img src='" . $icon['url'] . "'><br>";

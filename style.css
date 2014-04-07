@@ -222,26 +222,28 @@ footer{
 	width:18%;
 	height:20%;
 	margin: 5px 0px 5px 10px; 
-	float: left;
+	display:inline-block;
 	font-size:0.85em;
 }
 
 .indexProjectBox img{
-	width:130px;
-	height:130px;
+width:130px;
+height:130px;
+border: 0px;
 }
 
 .indexProjectBoxImgHolder {
-	height:130px;
-	width:130px;
-	background-size:130px 130px;
-	background-repeat:no-repeat;
+height:180px;
+width:180px;
+background-size:180px 180px;
+background-repeat:no-repeat;
+background-position: -1000px -1000px;
 }
 
 .indexSortMenu{
 	float: left;
 	width: 50px;
-	height: 100px;
+	height: 65px;
 	left: 10px;
 	top: 100px;
 	position: fixed;
