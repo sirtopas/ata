@@ -80,7 +80,6 @@
     	{
       		if (strpos($imageName,'_Rollover') == false) 
       		{
-				echo '<div class="arrowDown"></div>';
 				$link = wp_get_attachment_url($image->ID);
 			    $full = "'" . $link . "'"; 
 				echo '<a class="lightbox_trigger" href="' . $link . '">';
@@ -89,7 +88,7 @@
 			}
 		}
 	}
-	
+	echo '<div class="arrowDown"></div>';
 	echo '<div class="projectText"><div class="textHolder">' . get_field('project_text') . '</div></div>';
 	echo '</div>';
 	echo '</div>';

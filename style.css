@@ -21,8 +21,7 @@ Tags: architecture
 }
 
 .arrowDown{
-	background: url('arrowDown.png') center center no-repeat;
-	background-size: 80px 30px;
+	background: url('arrowDown.png') center no-repeat;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -227,8 +226,8 @@ footer{
 }
 
 .indexProjectBox img{
-width:130px;
-height:130px;
+width:180px;
+height:180px;
 border: 0px;
 }
 

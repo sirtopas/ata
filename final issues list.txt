@@ -1,7 +1,5 @@
 - full screen line images look jagged
 	- Less noticable with lower quality images
-- arrow overlay
-	- Still aliasing the .png
 - home screen logo
 	- Aligned. Should test on different screen sizes
 - Project box images are a fixed size. Need to be a percentage, but there's a bug with hovers that is making it problematic to implement.
