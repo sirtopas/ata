@@ -76,16 +76,21 @@
 	foreach( $gallery as $image ) 
 	{
 		$imageName = basename(wp_get_attachment_url( $image -> ID));
-    	if (strpos($imageName,'_Main') == false) 
+    	if (strpos($imageName,'_Main') == false && strpos($imageName,'_Rollover') == false && strpos($imageName,'_rollover') == false && strpos($imageName,'_icon') == false)  
     	{
-      		if (strpos($imageName,'_Rollover') == false) 
-      		{
-				$link = wp_get_attachment_url($image->ID);
-			    $full = "'" . $link . "'"; 
-				echo '<a class="lightbox_trigger" href="' . $link . '">';
-				echo '<img class="lazy" src="../wp-content/themes/ata/loader.gif" data-original="' . $link . '" id="" title="" alt=""/>';
-				echo '</a>';
-			}
+			$imageResized=wp_get_attachment_image($image -> ID, 'large', false);
+			$imagepieces = explode('"', $imageResized);
+			$largeUrl = $imagepieces[5];
+			$imageResized=wp_get_attachment_image($image -> ID, 'medium', false);
+			$imagepieces = explode('"', $imageResized);
+			$mediumUrl = $imagepieces[5];
+			$imageResized=wp_get_attachment_image($image -> ID, 'thumbnail', false);
+			$imagepieces = explode('"', $imageResized);
+			$thumbnailUrl = $imagepieces[5];
+			$full = "'" . $largeUrl . "'"; 
+			echo '<a class="lightbox_trigger" href="' . $largeUrl . '">';
+			echo '<img class="lazy" src="../wp-content/themes/ata/loader.gif" data-original="' . $largeUrl . '" data-large="' . $largeUrl . '" data-medium="' . $mediumUrl . '" data-thumbnail="' . $thumbnailUrl . '" id="" title="" alt=""/>';
+			echo '</a>';
 		}
 	}
 	echo '<div class="arrowDown"></div>';
