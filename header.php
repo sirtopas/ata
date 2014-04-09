@@ -16,7 +16,12 @@
     <script type="text/javascript" src="../wp-content/themes/ata/jquery.touchSwipe.min.js"></script>
 	  <script type="text/javascript" src="../wp-content/themes/ata/jquery.lazyload.min.js"></script>
   	<script type="text/javascript" src="../wp-content/themes/ata/jquery.classer.js"></script>
-  	<script type="text/javascript" src="../wp-content/themes/ata/fastclick.js"></script>
+	<?php
+	$userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
+	if(stripos($userAgent,'android') == false) { 
+		echo '<script type="text/javascript" src="../wp-content/themes/ata/fastclick.js"></script>';
+	} 
+	?>
   	<script type="text/javascript" src="../wp-content/themes/ata/jquery.tinysort.js"></script>
   	<script type="text/javascript" src="../wp-content/themes/ata/code.projectscroller.js"></script>
 </head>
