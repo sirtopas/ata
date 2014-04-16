@@ -20,8 +20,16 @@ Tags: architecture
 
 }
 
+.fadeBottom{
+	background: url('bottom_fade.png') repeat-x;
+    width: 100%;
+  	height: 50px;
+  	position: fixed;
+  	bottom: 50px;
+	z-index: 1;
+}
 .arrowDown{
-	background: url('arrowDown.png') center no-repeat;
+	background: url('arrow_down.png') center no-repeat;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -29,8 +37,8 @@ Tags: architecture
   	height: 100px;
   	position: fixed;
   	bottom: 50px;
+	z-index:2;
 }
-
 body{
 	background-color: white;
 	font-size: 12px;
@@ -116,8 +124,7 @@ footer{
 		
 	}
 	.testMenu ul{
-		font-size:1.25em;
-		
+		font-size:1.1em;
 		color: black;
 		list-style:none;
 		margin:0;
@@ -219,22 +226,39 @@ footer{
 
 .indexProjectBox{
 	width:18%;
-	height:20%;
+	height:auto;
 	margin: 5px 0px 5px 10px; 
 	display:inline-block;
 	font-size:0.85em;
-}
 
-.indexProjectBox img{
-width:180px;
-height:180px;
+}
+.indexProjectText
+{
+	color: #000; /* Fallback for older browsers */
+  /*  color: rgba(0, 0, 0, 0.3);*/
+  opacity: 0.3;
+}
+.indexProjectBoxImgHolder img{
+width:100%;
+height:100%;
 border: 0px;
 }
+.indexProjectBoxImgHolder a{
 
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        text-decoration: none; /* No underlines on the link */
+        z-index: 10; /* Places the link above everything else in the div */
+        background-color: #FFF; /* Fix to make div clickable in IE */
+        opacity: 0; /* Fix to make div clickable in IE */
+        filter: alpha(opacity=1); /* Fix to make div clickable in IE */
+}
 .indexProjectBoxImgHolder {
-height:180px;
-width:180px;
-background-size:180px 180px;
+width:100%;
+height:auto;
+background-size:100% auto;
 background-repeat:no-repeat;
 background-position: -1000px -1000px;
 }
@@ -244,17 +268,19 @@ background-position: -1000px -1000px;
 	width: 50px;
 	height: 65px;
 	left: 10px;
-	top: 100px;
+	top: 60px;
 	position: fixed;
 	background-color: white;
 	position: fixed;
 	z-index: 5;
 	font-size: 0.8em;
+	line-height:170%;
 }
 
 .indexSortMenu a{
 	color:#000000;
 	text-decoration:none;
+	
 }
 
 .indexSortMenu a:hover{
@@ -617,6 +643,7 @@ ul.images {
 	.newProject{
 		margin-top: 40px;
 	}
+	
 }
 
 /*iPhone 2G-4S in landscape*/
@@ -669,6 +696,9 @@ ul.images {
 	.indexProjectBox{
 		width: 30%;
 	}
+	.fadeBottom{
+	display:none;
+}
 }
 
 /*iPhone 2G-4S in portrait*/
@@ -754,7 +784,9 @@ ul.images {
 	.indexProjectBox{
 		width: 45%;
 	}
-
+.fadeBottom{
+	display:none;
+}
 }
 
 /* > iPhone 4S  */
@@ -789,4 +821,8 @@ ul.images {
 .testMenu{
 	padding-bottom: 10px;
 }	
+
+.fadeBottom{
+	display:none;
+}
 }

@@ -59,14 +59,14 @@
 		}
 		else
 		{
-			echo '<div class="rightArrow" id="R'. $postName . '" onclick="loadContact()"></div>';
+			echo '<div class="rightArrow" id="R'. $postName . '" onclick="loadIndex()"></div>';
 			$finalPost = $thisPost;
 		}
 		
 		echo '<div class="newProject">';
 		echo '<div class="projectContent" id="'. $postName . '" style="width:100%" >';
 
-//Load all images for each project
+        //Load all images for each project
 		$gallery = get_children( 'posts_per_page=-1&order=asc&post_type=attachment&post_mime_type=image&post_parent=' . $post -> ID);
 		$attr = array(
     		'class' => "attachment-$size wp-post-image",
@@ -94,6 +94,7 @@
 		}
 	}
 	echo '<div class="arrowDown"></div>';
+	//echo '<div class="fadeBottom"></div>';
 	echo '<div class="projectText"><div class="textHolder">' . get_field('project_text') . '</div></div>';
 	echo '</div>';
 	echo '</div>';
@@ -101,9 +102,11 @@
 	echo '<div class="projectFooter"></div>';
 ?>
 
+
 <!-- Load contact information -->
 <?php
-	echo '<div class="leftArrow" id="Lcontact" onclick="loadProject(' . $finalPost . ',\'contact\')"></div>';
+    //echo '<div class="leftArrow" id="Lcontact" onclick="loadProject(' . $finalPost . ',\'contact\')"></div>';
+    echo '<div class="leftArrow" id="Lcontact" onclick="loadIndex()"></div>';
 	echo '<div class="rightArrow" id="Rcontact" onclick="loadNews()"></div>';
 ?>
 
@@ -119,13 +122,14 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 		the_content();
 	}
 ?>
+</div>
+</div>
 
-</div>
-</div>
 
 <!-- Load news information -->
 <?php 
 	echo '<div class="leftArrow" id="Lnews" onclick="loadContact()"></div>';
+    echo '<div class="rightArrow" id="Rnews" onclick="loadTwitter()"></div>';
 ?>
 
 <div class="projectContent" id="news" style="width:100%" >
@@ -148,6 +152,7 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 </div>
 <?php endforeach; wp_reset_postdata(); ?>
 </div>
+
 </div>
 <?php 
 	echo '<div class="rightArrow" id="Rnews" onclick="loadIndex()"></div>';
@@ -155,11 +160,12 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 
 <!-- Load index -->
 <?php 
-	echo '<div class="leftArrow" id="Lindex" onclick="loadNews()"></div>';
+	echo '<div class="leftArrow" id="Lindex" onclick="loadProject(' . $finalPost . ',\'index\')"></div>';
+    echo '<div class="rightArrow" id="Rindex" onclick="loadContact()"></div>';
 ?>
 <div class="projectContent" id="index" style="width:100%" >
 	<div class="indexSortMenu">
-		Sort By<br>
+		<p>Sort by:</p>
 		<a href="javascript:sortProject()">PROJECT</a><br>
 		<a href="javascript:sortDate()">DATE</a><br>
 		<a href="javascript:sortLocation()">LOCATION</a><br>
@@ -197,14 +203,13 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 		}
 		$icon = get_field('icon');
 		$icon_rollover = get_field('icon_rollover');
-
-		echo '<div id="'. $postId . '"  class="indexProjectBox" data-yearstarted="' .  get_field('year_started') . '" data-yearcompleted="' .  get_field('year_completed') . '" data-category="' .  get_field('category') . '" data-status="' .  get_field('status') . '" data-location="' .   $location  . '" data-uk="' .  $isUK . '">';
-		echo "<a class=\"indexProjectBoxImgLink\"  href=\"javascript:loadProject('" . $postId . "', 'index')\">";
+		echo "<a class=\"indexProjectBoxImgLink\"  href=\"javascript:loadProject('" . $postId . "', 'index')\" data-yearstarted='" .  get_field('year_started') . "' data-yearcompleted='" .  get_field('year_completed') . "' data-category='" .  get_field('category') . "' data-status='" .  get_field('status') . "' data-location='" .   $location  . "' data-uk='" .  $isUK . "'>";
+		echo '<div id="'. $postId . '"  class="indexProjectBox">';
 		echo '<div class="indexProjectBoxImgHolder" style="background-image: url(' . $icon_rollover['url'] . ')">'; 
 		echo "<img src='" . $icon['url'] . "'><br>";
-		echo "</div></a>";
-
-		echo strtoupper(get_field('project_title')) . "<br>";
+		echo "</div>";
+		echo '<div class="indexProjectText">';
+		echo strtoupper(get_field('project_title')) . "<br><br>";
 		if(get_field('year_completed') == '0')
 		{
 			echo get_field('year_started') . "<br>";
@@ -219,19 +224,22 @@ $argys = array('category' => '2', 'posts_per_page' => 1);
 		echo get_field('status') . "<br>";
 
 	$idTest = $idTest - 1;
-	echo '</div>';
+	echo '</div></div></a>';
 	endforeach; 
 	
 	?>
+	
 </div>
 </div>
+<div class="fadeBottom"></div>
 </div>
 <div class = "testMenu">
 	<ul class="nav">
 		<li><a id="homeLink" class="active" href="javascript:loadHome();">Home</a></li>
 		<li><a id="projectsLink" class="inactive" href="javascript:loadProjects();">Projects</a></li>
+        <li><a id="indexLink" class="inactive" href="javascript:loadIndex();">Index</a></li>
 		<li><a id="contactLink" class="inactive" href="javascript:loadContact();">Office</a></li>
-		<li><a id="indexLink" class="inactive" href="javascript:loadIndex();">Index</a></li>
+        <li><a id="newsLink" class="inactive" href="javascript:loadNews();">News</a></li>
 	</ul>
 </div>
 <?php get_footer(); ?>
